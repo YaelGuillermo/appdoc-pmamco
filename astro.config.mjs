@@ -1,13 +1,20 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
+import tailwind from '@astrojs/tailwind'; 
 
 // https://astro.build/config
 export default defineConfig({
+	site: 'https://amco.me',
 	integrations: [
 		starlight({
-			title: 'My Docs',
-			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/withastro/starlight' }],
+			title: 'Project Management Amco Editorial',
+			description: 'Description',
+			logo: {
+				src: './src/assets/images/logo.png',
+				alt: 'Logo',
+			},		
+			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/YaelAmco' }],
 			sidebar: [
 				{
 					label: 'Guides',
@@ -22,5 +29,6 @@ export default defineConfig({
 				},
 			],
 		}),
+	    tailwind(),
 	],
 });

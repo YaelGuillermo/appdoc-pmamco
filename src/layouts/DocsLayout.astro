@@ -1,0 +1,31 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const allDocs = await getCollection('docs');
+---
+
+<BaseLayout>
+  <div class="container mx-auto px-4 py-8 flex">
+    <aside class="w-64 pr-8 border-r border-gray-200 dark:border-gray-700">
+      <nav class="sticky top-20">
+        <ul class="space-y-2">
+          {allDocs.map((doc) => (
+            <li>
+              <a 
+                href={`/docs/${doc.slug}`}
+                class="block px-3 py-2 rounded text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
+              >
+                {doc.data.title}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    </aside>
+    
+    <main class="flex-1 pl-8 max-w-3xl">
+      <slot />
+    </main>
+  </div>
+</BaseLayout>
