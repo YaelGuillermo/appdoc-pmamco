@@ -1,7 +1,6 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
-import tailwind from '@astrojs/tailwind'; 
 
 // https://astro.build/config
 export default defineConfig({
@@ -11,15 +10,24 @@ export default defineConfig({
 			title: 'Project Management Amco Editorial',
 			description: 'Description',
 			logo: {
-				src: './src/assets/images/logo.png',
+				src: './public/favicon.svg',
 				alt: 'Logo',
 			},		
 			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/YaelAmco' }],
+			defaultLocale: 'root',
+			locales: {
+			root: {
+				label: 'English',
+				lang: 'en',
+			},
+			  es: {
+				label: 'Español',
+			  },
+			},
 			sidebar: [
 				{
 					label: 'Guides',
 					items: [
-						// Each item here is one entry in the navigation menu.
 						{ label: 'Example Guide', slug: 'guides/example' },
 					],
 				},
@@ -29,6 +37,5 @@ export default defineConfig({
 				},
 			],
 		}),
-	    tailwind(),
 	],
 });
