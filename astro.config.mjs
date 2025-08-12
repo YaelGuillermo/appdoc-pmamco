@@ -17,18 +17,34 @@ export default defineConfig({
 			defaultLocale: 'root',
 			locales: {
 			root: {
-				label: 'English',
-				lang: 'en',
-			},
-			  es: {
 				label: 'Español',
+				lang: 'es',
+			},
+			  en: {
+				label: 'English',
 			  },
 			},
 			sidebar: [
 				{
-					label: 'Guides',
+					label: 'Proyectos',
+					translations: {
+						'en': 'Projects',
+					},				
 					items: [
-						{ label: 'Example Guide', slug: 'guides/example' },
+						{ 
+							label: 'Programa',
+							translations: {
+								'en': 'Program',
+							},					 
+							slug: 'projects/program' 
+						},
+						{ 
+							label: 'Libro',
+							translations: {
+								'en': 'Book',
+							},					 
+							slug: 'projects/book' 
+						},
 					],
 				},
 				{
