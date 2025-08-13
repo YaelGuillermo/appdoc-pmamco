@@ -39,11 +39,39 @@ export default defineConfig({
 							slug: 'projects/program' 
 						},
 						{ 
+							label: 'Resource',
+							translations: {
+								'en': 'Resource',
+							},					 
+							slug: 'projects/resource' 
+						},
+						{ 
+							label: 'Proceso',
+							translations: {
+								'en': 'Process',
+							},					 
+							slug: 'projects/process' 
+						},
+						{ 
 							label: 'Libro',
 							translations: {
 								'en': 'Book',
 							},					 
 							slug: 'projects/book' 
+						},
+						{ 
+							label: 'Grado',
+							translations: {
+								'en': 'Grade',
+							},					 
+							slug: 'projects/grade' 
+						},
+						{ 
+							label: 'Clase',
+							translations: {
+								'en': 'Session',
+							},					 
+							slug: 'projects/session' 
 						},
 					],
 				},
