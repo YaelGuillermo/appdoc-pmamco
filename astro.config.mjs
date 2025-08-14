@@ -73,6 +73,13 @@ export default defineConfig({
 							},					 
 							slug: 'projects/session' 
 						},
+						{ 
+							label: 'Documento General',
+							translations: {
+								'en': 'General Document',
+							},					 
+							slug: 'projects/generaldocument' 
+						},
 					],
 				},
 				{
