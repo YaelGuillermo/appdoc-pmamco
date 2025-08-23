@@ -5,7 +5,7 @@ description: Aprende qué es un proceso, cómo crear uno y qué campos debes com
 
 # ¿Qué es un Proceso?
 
-Un **Proceso** es una actividad estructurada y repetible que forma parte del flujo de trabajo dentro de un programa. Representa una etapa específica del desarrollo editorial, como diseño, edición, revisión o planificación, y está asociada a un equipo responsable.
+Un **Proceso** es una actividad estructurada y repetible que forma parte del flujo de trabajo dentro de un programa. Representa una tarea de una etapa específica del desarrollo editorial, como diseño, edición, revisión o planificación, y está asociada a un equipo responsable.
 
 Los procesos permiten organizar el trabajo de forma clara, asignar responsabilidades por área y garantizar que cada tarea crítica se realice en el momento adecuado. Son la base para coordinar equipos especializados y mantener el avance del programa de manera ordenada.
 
@@ -48,7 +48,7 @@ Estos campos no son obligatorios, pero ayudan a estructurar mejor tu proceso.
 | Campo | Descripción | Opciones disponibles | Ejemplo |
 |------|-------------|------------------------|-------|
 | **Descripción** | Explica el propósito, alcance o criterios del proceso. Ayuda a los equipos a entender su objetivo. | Máximo **512 caracteres** | `Este proceso verifica que todos los libros cumplan con las normas de calidad editorial.` |
-| **Equipo** | Equipo responsable de ejecutar este proceso (por ejemplo, Edición, Diseño, Calidad, etc.). | `Tráfico`, `Diseño`, `Edición`, `Multimedia`, `Planificación`, `Traducción`, entre otros. | `Calidad` |
+| **Equipo** | Equipo responsable de ejecutar este proceso (por ejemplo, Edición, Diseño, Calidad, etc.). *Excepto el equipo de Invitados.* | `Tráfico`, `Diseño`, `Edición`, `Multimedia`, `Planificación`, `Traducción`, entre otros. | `Control de Calidad` |
 
 ---
 
@@ -57,12 +57,8 @@ Estos campos no son obligatorios, pero ayudan a estructurar mejor tu proceso.
 - 🔒 **Máximo 500 procesos activos por programa**  
   Solo puedes tener **500 procesos activos** a la vez dentro de un programa. Si necesitas crear uno nuevo, deberás archivar uno anterior.
 
-- 📅 **Las fechas deben tener sentido**  
-  - La **fecha de inicio** debe ser anterior o igual a la **fecha final**.
-  - Ambas fechas deben estar dentro del rango del **programa** al que pertenece el proceso.
-
-- 🔄 **El progreso se calcula automáticamente**  
-  El sistema monitorea el avance de los procesos dentro del programa. Puedes verlo en el tablero general.
+- 🔒 **Títulos únicos por programa**
+No se puede crear un proceso con el mismo título que otro existente en el mismo programa, a menos que sean de equipos diferentes.
 
 ---
 
@@ -71,7 +67,6 @@ Estos campos no son obligatorios, pero ayudan a estructurar mejor tu proceso.
 - Usa un **título claro y específico**, como `Diagramación de libros` o `Revisión de traducción`.
 - Aprovecha la **descripción** para detallar qué se espera del equipo.
 - Asigna el **equipo correcto** para evitar confusiones en la ejecución.
-- Revisa siempre las fechas: un proceso bien planificado mejora la coordinación entre áreas.
 
 ---
 
@@ -83,12 +78,12 @@ Desde el menú de cada proceso, puedes realizar acciones clave con un clic. Aqu�
 
 | Acción | Qué hace |
 |--------|---------|
-| **✏️ Editar** | Permite modificar el título, descripción, equipo o fechas del proceso. |
-| **👁️ Ver** | Muestra detalles del proceso: equipo responsable, fechas, descripción, etc. |
-| **🗜️ Clonar** | Crea una copia exacta del proceso. Ideal para replicar actividades comunes en otros programas. |
+| **✏️ Editar** | Permite modificar el título, descripción, equipo del proceso. |
+| **👁️ Ver** | Muestra detalles del proceso: equipo responsable, descripción, etc. |
+| **🗜️ Clonar** | Crea una copia exacta del proceso. Ideal para replicar actividades comunes en otros equipos. |
 | **📦 Archivar** | Retira el proceso de forma temporal. Puedes recuperarlo cuando lo necesites. |
 
-> 💡 **Tip**: Usa *Clonar* para duplicar procesos estándar como “Revisión de calidad” o “Diagramación” en múltiples programas.
+> 💡 **Tip**: Usa *Clonar* para duplicar procesos estándar como “Revisión de calidad” o “Diagramación” en múltiples equipos.
 
 ---
 
@@ -122,6 +117,8 @@ Cada proceso pertenece a un equipo funcional. Las opciones disponibles son:
 - `Traducción`
 - `Planificación`
 - `Administración`
+
+> ⚠️ **Importante**: El equipo Invitados no está disponible para ser asignado a un proceso.
 
 Estos equipos representan las áreas clave del flujo editorial y ayudan a organizar el trabajo por especialidad.
 

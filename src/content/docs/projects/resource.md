@@ -58,9 +58,6 @@ Estos campos no son obligatorios, pero ayudan a estructurar mejor tu recurso.
 - 🔒 **Máximo 20 recursos activos por programa**  
   Solo puedes tener **20 recursos activos** a la vez dentro de un programa. Si necesitas crear uno nuevo, deberás archivar uno anterior.
 
-- 🔄 **El progreso se calcula automáticamente**  
-  El sistema monitorea el uso y estado de los recursos. Puedes verlo en el tablero general del programa.
-
 ---
 
 ## 💡 Consejos para crear un buen recurso

@@ -39,7 +39,7 @@ export default defineConfig({
 							slug: 'projects/program' 
 						},
 						{ 
-							label: 'Resource',
+							label: 'Recurso',
 							translations: {
 								'en': 'Resource',
 							},					 
@@ -67,7 +67,7 @@ export default defineConfig({
 							slug: 'projects/grade' 
 						},
 						{ 
-							label: 'Clase',
+							label: 'Sesión',
 							translations: {
 								'en': 'Session',
 							},					 
