@@ -7,8 +7,11 @@ export default defineConfig({
 	site: 'https://amco.me',
 	integrations: [
 		starlight({
-			title: 'Project Management Amco Editorial',
-			description: 'Description',
+			title: {
+				es: 'Gestor de Proyectos Amco Editorial',
+				en: 'Project Management Amco Editorial',
+			},
+			description: "System for managing programs for Amco Editorial",
 			logo: {
 				src: './public/favicon.svg',
 				alt: 'Logo',
@@ -26,6 +29,28 @@ export default defineConfig({
 			},
 			sidebar: [
 				{
+					label: 'Cuentas',
+					translations: {
+						'en': 'Accounts',
+					},
+					items: [
+						{ 
+							label: 'Usuario',
+							translations: {
+								'en': 'User',
+							},					 
+							slug: 'accounts/user', 
+						},
+						{
+							label: 'Perfil',
+							translations: {
+								'en': 'Profile',
+							},					 
+							slug: 'accounts/profile',
+						}
+					],
+				},
+				{
 					label: 'Proyectos',
 					translations: {
 						'en': 'Projects',
@@ -37,6 +62,13 @@ export default defineConfig({
 								'en': 'Program',
 							},					 
 							slug: 'projects/program' 
+						},
+						{ 
+							label: 'Miembro',
+							translations: {
+								'en': 'Member',
+							},					 
+							slug: 'projects/member', 
 						},
 						{ 
 							label: 'Recurso',
@@ -51,6 +83,27 @@ export default defineConfig({
 								'en': 'Process',
 							},					 
 							slug: 'projects/process' 
+						},
+						{ 
+							label: 'Documento General',
+							translations: {
+								'en': 'General Document',
+							},					 
+							slug: 'projects/generaldocument' 
+						},
+						{ 
+							label: 'Periférico',
+							translations: {
+								'en': 'Peripheral',
+							},					 
+							slug: 'projects/peripheral' 
+						},
+						{ 
+							label: 'Actividad',
+							translations: {
+								'en': 'Activity',
+							},					 
+							slug: 'projects/activity' 
 						},
 						{ 
 							label: 'Libro',
@@ -74,11 +127,53 @@ export default defineConfig({
 							slug: 'projects/session' 
 						},
 						{ 
-							label: 'Documento General',
+							label: 'Tarjeta',
 							translations: {
-								'en': 'General Document',
+								'en': 'Card',
 							},					 
-							slug: 'projects/generaldocument' 
+							slug: 'projects/card' 
+						},
+						{ 
+							label: 'Checklist',
+							translations: {
+								'en': 'Checklist',
+							},					 
+							slug: 'projects/checklist' 
+						},
+						{ 
+							label: 'Ítem',
+							translations: {
+								'en': 'Item',
+							},					 
+							slug: 'projects/item', 
+						},
+						{ 
+							label: 'Historial',
+							translations: {
+								'en': 'History',
+							},					 
+							slug: 'projects/history',
+						},
+						{ 
+							label: 'Comentario',
+							translations: {
+								'en': 'Comment',
+							},					 
+							slug: 'projects/comment',
+						},
+						{ 
+							label: 'Columna',
+							translations: {
+								'en': 'Column',
+							},					 
+							slug: 'projects/column',
+						},
+						{ 
+							label: 'Nota',
+							translations: {
+								'en': 'Note',
+							},					 
+							slug: 'projects/note',
 						},
 					],
 				},

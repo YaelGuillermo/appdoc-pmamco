@@ -32,12 +32,12 @@ Al crear o actualizar un programa, deberás completar los siguientes campos. Aqu
 
 Estos campos **debes completarlos siempre** para poder guardar el programa.
 
-| Campo | Descripción | Límite | Ejemplo |
-|------|-------------|--------|-------|
-| **Título** | Nombre identificativo del programa. Debe ser claro y representativo. | Máximo **64 caracteres** | `Impact` |
-| **Fecha de inicio** | Día en que comienzan las actividades del programa. | — | `15 de enero de 2025` |
-| **Fecha final** | Día en que termina oficialmente el programa. | — | `30 de junio de 2025` |
-| **Dueño** | Persona responsable del programa. *(Llenado automático)* | — | `Claudia Domínguez` |
+| Campo               | Descripción                                                          | Límite                   | Ejemplo               |
+| ------------------- | -------------------------------------------------------------------- | ------------------------ | --------------------- |
+| **Título**          | Nombre identificativo del programa. Debe ser claro y representativo. | Máximo **64 caracteres** | `Impact`              |
+| **Fecha de inicio** | Día en que comienzan las actividades del programa.                   | —                        | `15 de enero de 2025` |
+| **Fecha final**     | Día en que termina oficialmente el programa.                         | —                        | `30 de junio de 2025` |
+| **Dueño**           | Persona responsable del programa. _(Llenado automático)_             | —                        | `Claudia Domínguez`   |
 
 > ⚠️ **Importante**: Si no completas estos campos, no podrás guardar el programa.
 
@@ -47,12 +47,12 @@ Estos campos **debes completarlos siempre** para poder guardar el programa.
 
 Estos campos no son obligatorios, pero ayudan a estructurar mejor tu programa.
 
-| Campo | Descripción | Opciones disponibles | Ejemplo |
-|------|-------------|------------------------|-------|
-| **Descripción** | Explica el propósito, objetivos o alcance del programa. Ayuda a otros a entender de qué se trata. | Máximo **512 caracteres** | `Este programa cubre la creación de documentación técnica usando Starlight.` |
-| **Ícono** | Símbolo visual que representa al programa. Ayuda a identificarlo rápidamente en listas o tableros. | `Letra`, `Ancla`, `Globo`, `Maletín`, `Gráfico`, `Grupo de usuarios` | `Letra` |
-| **Periodo** | Ciclo de trabajo del programa. Define cada cuánto tiempo se entregan avances. | `Mensual`, `Bimestral`, `Trimestral`, `Cuatrimestral`, `Semestral`, `Anual` | `Semestral` |
-| **Lenguaje** | Idioma principal de los contenidos del programa. | `Español`, `Portugués (Brasil)`, `Inglés` | `Español` |
+| Campo           | Descripción                                                                                        | Opciones disponibles                                                        | Ejemplo                                                                      |
+| --------------- | -------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| **Descripción** | Explica el propósito, objetivos o alcance del programa. Ayuda a otros a entender de qué se trata.  | Máximo **512 caracteres**                                                   | `Este programa cubre la creación de documentación técnica usando Starlight.` |
+| **Ícono**       | Símbolo visual que representa al programa. Ayuda a identificarlo rápidamente en listas o tableros. | `Letra`, `Ancla`, `Globo`, `Maletín`, `Gráfico`, `Grupo de usuarios`        | `Letra`                                                                      |
+| **Periodo**     | Ciclo de trabajo del programa. Define cada cuánto tiempo se entregan avances.                      | `Mensual`, `Bimestral`, `Trimestral`, `Cuatrimestral`, `Semestral`, `Anual` | `Semestral`                                                                  |
+| **Lenguaje**    | Idioma principal de los contenidos del programa.                                                   | `Español`, `Portugués (Brasil)`, `Inglés`                                   | `Español`                                                                    |
 
 ---
 
@@ -82,6 +82,7 @@ Estos campos no son obligatorios, pero ayudan a estructurar mejor tu programa.
 ## 📚 ¿Qué sigue después de crear un programa?
 
 Una vez creado, puedes:
+
 - Añadir **libros** y **documentos** al programa.
 - Añadir **productos base** y **periféricos** al programa.
 - Invitar a **miembros del equipo** para colaborar.

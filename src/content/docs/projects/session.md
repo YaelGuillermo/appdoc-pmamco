@@ -5,7 +5,7 @@ description: Aprende qué es una sesión, cómo crear una y qué campos debes co
 
 # ¿Qué es una Sesión?
 
-Una **Sesión** es una unidad de trabajo dentro de un **grado**, que organiza y planifica una parte específica del contenido del libro. Es como una lección o módulo que guía el desarrollo editorial por etapas, permitiendo estructurar el contenido de forma secuencial y visual.
+Una **Sesión** es una unidad de trabajo dentro de un **[grado]**, que organiza y planifica una parte específica del contenido del libro. Es como una lección o módulo que guía el desarrollo editorial por etapas, permitiendo estructurar el contenido de forma secuencial y visual.
 
 Las sesiones ayudan a dividir el trabajo en bloques manejables, asignar responsables y seguir el progreso del contenido por nivel escolar. Son esenciales para mantener el flujo de trabajo claro y alineado con el plan general del libro.
 
@@ -32,11 +32,11 @@ Al crear o actualizar una sesión, deberás completar los siguientes campos. Aqu
 
 Estos campos **debes completarlos siempre** para poder guardar la sesión.
 
-| Campo | Descripción | Límite | Ejemplo |
-|------|-------------|--------|-------|
+| Campo      | Descripción                                                                | Límite                   | Ejemplo                      |
+| ---------- | -------------------------------------------------------------------------- | ------------------------ | ---------------------------- |
 | **Título** | Nombre identificativo de la sesión. Debe reflejar claramente su contenido. | Máximo **64 caracteres** | `Introducción a la ecología` |
-| **Número** | Posición de la sesión dentro del grado. Define el orden de desarrollo. | Entre **1 y 45** | `5` |
-| **Grado** | El grado al que pertenece esta sesión. *(Llenado automático)* | — | `3er grado (Primaria)` |
+| **Número** | Posición de la sesión dentro del grado. Define el orden de desarrollo.     | Entre **1 y 45**         | `5`                          |
+| **Grado**  | El grado al que pertenece esta sesión. _(Llenado automático)_              | —                        | `3er grado (Primaria)`       |
 
 > ⚠️ **Importante**: Si no completas estos campos, no podrás guardar la sesión.
 
@@ -46,11 +46,11 @@ Estos campos **debes completarlos siempre** para poder guardar la sesión.
 
 Estos campos no son obligatorios, pero ayudan a estructurar mejor tu sesión.
 
-| Campo | Descripción | Opciones disponibles | Ejemplo |
-|------|-------------|------------------------|-------|
-| **Descripción** | Explica el objetivo, contenido o enfoque de la sesión. Ayuda al equipo a entender su propósito. | Máximo **512 caracteres** | `Esta sesión introduce conceptos básicos de ecosistemas y cadenas alimenticias.` |
-| **Responsable** | Miembro del equipo encargado de coordinar el desarrollo de la sesión. | Miembro del equipo editorial | `Laura Fernández` |
-| **Fondo** | Imagen de fondo temática que representa visualmente la sesión. Ayuda a identificarla en el tablero. | `Lago y montañas`, `Cascada`, `Puesta de sol`, `Flores y montaña`, `Horseshoe Bend`, `Sin fondo` | `Puesta de sol` |
+| Campo           | Descripción                                                                                         | Opciones disponibles                                                                             | Ejemplo                                                                          |
+| --------------- | --------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------- |
+| **Descripción** | Explica el objetivo, contenido o enfoque de la sesión. Ayuda al equipo a entender su propósito.     | Máximo **512 caracteres**                                                                        | `Esta sesión introduce conceptos básicos de ecosistemas y cadenas alimenticias.` |
+| **Responsable** | Miembro del equipo encargado de coordinar el desarrollo de la sesión.                               | Miembro del equipo editorial                                                                     | `Laura Fernández`                                                                |
+| **Fondo**       | Imagen de fondo temática que representa visualmente la sesión. Ayuda a identificarla en el tablero. | `Lago y montañas`, `Cascada`, `Puesta de sol`, `Flores y montaña`, `Horseshoe Bend`, `Sin fondo` | `Puesta de sol`                                                                  |
 
 ---
 
@@ -83,20 +83,21 @@ Desde el menú de cada sesión, puedes realizar acciones clave con un clic. Aqu�
 
 ![Actions](/images/en/projects/session/actions.webp)
 
-| Acción | Qué hace |
-|--------|---------|
-| **✏️ Editar** | Permite modificar el título, número, fondo, responsable o descripción de la sesión. |
-| **👁️ Ver** | Muestra detalles de la sesión: número, grado, responsable, descripción, etc. |
-| **🗜️ Clonar** | Crea una copia exacta de la sesión, incluyendo sus tarjetas. Ideal para replicar estructuras entre grados similares. |
-| **📦 Archivar** | Retira la sesión de forma temporal. Puedes recuperarla cuando lo necesites. |
+| Acción          | Qué hace                                                                                                             |
+| --------------- | -------------------------------------------------------------------------------------------------------------------- |
+| **✏️ Editar**   | Permite modificar el título, número, fondo, responsable o descripción de la sesión.                                  |
+| **👁️ Ver**      | Muestra detalles de la sesión: número, grado, responsable, descripción, etc.                                         |
+| **🗜️ Clonar**   | Crea una copia exacta de la sesión, incluyendo sus tarjetas. Ideal para replicar estructuras entre grados similares. |
+| **📦 Archivar** | Retira la sesión de forma temporal. Puedes recuperarla cuando lo necesites.                                          |
 
-> 💡 **Tip**: Usa *Clonar* si necesitas duplicar una sesión con su contenido para otro grado o libro.
+> 💡 **Tip**: Usa _Clonar_ si necesitas duplicar una sesión con su contenido para otro grado o libro.
 
 ---
 
 ## 📚 ¿Qué sigue después de crear una sesión?
 
 Una vez creada, puedes:
+
 - Añadir **tarjetas** para planificar actividades, textos o recursos.
 - Asignar **recursos específicos** (plantillas, imágenes, videos).
 - Seguir el **progreso de la sesión** desde el tablero Kanban.
@@ -118,6 +119,8 @@ Cada sesión puede tener un fondo visual que la identifique rápidamente en el t
 Estos fondos ayudan a diferenciar visualmente sesiones por tema, dificultad o tipo de contenido.
 
 ---
+
+[grado]: /projects/grade/
 
 <!--
 ## 🔗 Lectura recomendada

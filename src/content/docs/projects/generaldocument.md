@@ -5,7 +5,7 @@ description: Aprende qué es un documento general, cómo crear uno y qué campos
 
 # ¿Qué es un Documento General?
 
-Un **Documento General** es un archivo o recurso independiente que forma parte de un programa, pero que no pertenece directamente a un libro. Sirve para gestionar contenido relevante como actas, informes, guías institucionales, lineamientos editoriales o cualquier otro documento clave para el desarrollo del programa.
+Un **Documento General** es un archivo o recurso independiente que forma parte de un **[programa]**, pero que no pertenece directamente a un libro. Sirve para gestionar contenido relevante como actas, informes, guías institucionales, lineamientos editoriales o cualquier otro documento clave para el desarrollo del programa.
 
 Los documentos generales permiten mantener organizada la información complementaria que el equipo necesita, sin saturar la estructura de los libros. Son ideales para tareas transversales, seguimiento administrativo o decisiones colectivas.
 
@@ -32,10 +32,10 @@ Al crear o actualizar un documento general, deberás completar los siguientes ca
 
 Estos campos **debes completarlos siempre** para poder guardar el documento.
 
-| Campo | Descripción | Límite | Ejemplo |
-|------|-------------|--------|-------|
-| **Título** | Nombre identificativo del documento. Debe ser claro y representativo. | Máximo **64 caracteres** | `Acta de inicio de programa` |
-| **Programa** | El programa al que pertenece este documento. *(Llenado automático)* | — | `Impact` |
+| Campo        | Descripción                                                           | Límite                   | Ejemplo                      |
+| ------------ | --------------------------------------------------------------------- | ------------------------ | ---------------------------- |
+| **Título**   | Nombre identificativo del documento. Debe ser claro y representativo. | Máximo **64 caracteres** | `Acta de inicio de programa` |
+| **Programa** | El programa al que pertenece este documento. _(Llenado automático)_   | —                        | `Impact`                     |
 
 > ⚠️ **Importante**: Si no completas estos campos, no podrás guardar el documento.
 
@@ -45,10 +45,10 @@ Estos campos **debes completarlos siempre** para poder guardar el documento.
 
 Este campo no es obligatorio, pero ayuda a estructurar mejor tu documento.
 
-| Campo | Descripción | Límite | Ejemplo |
-|------|-------------|--------|-------|
+| Campo           | Descripción                                                                                         | Límite                    | Ejemplo                                                                        |
+| --------------- | --------------------------------------------------------------------------------------------------- | ------------------------- | ------------------------------------------------------------------------------ |
 | **Descripción** | Explica el propósito, contenido o contexto del documento. Ayuda al equipo a entender su relevancia. | Máximo **512 caracteres** | `Este documento registra los acuerdos del equipo al inicio del programa 2025.` |
-| **Responsable** | Persona del equipo encargada de coordinar, actualizar o supervisar este documento. | — | `Claudia Domínguez` |
+| **Responsable** | Persona del equipo encargada de coordinar, actualizar o supervisar este documento.                  | —                         | `Claudia Domínguez`                                                            |
 
 ---
 
@@ -80,26 +80,29 @@ Desde el menú de cada documento general, puedes realizar acciones clave con un 
 
 ![Actions](/images/en/projects/general-document/actions.webp)
 
-| Acción | Qué hace |
-|--------|---------|
-| **✏️ Editar** | Permite modificar el título, descripción o responsable del documento. |
-| **👁️ Ver** | Muestra detalles del documento: programa, responsable, descripción, etc. |
-| **🗜️ Clonar** | Crea una copia exacta del documento. Ideal para reutilizar formatos en otros programas. |
-| **📦 Archivar** | Retira el documento de forma temporal. Puedes recuperarlo cuando lo necesites. |
+| Acción          | Qué hace                                                                                |
+| --------------- | --------------------------------------------------------------------------------------- |
+| **✏️ Editar**   | Permite modificar el título, descripción o responsable del documento.                   |
+| **👁️ Ver**      | Muestra detalles del documento: programa, responsable, descripción, etc.                |
+| **🗜️ Clonar**   | Crea una copia exacta del documento. Ideal para reutilizar formatos en otros programas. |
+| **📦 Archivar** | Retira el documento de forma temporal. Puedes recuperarlo cuando lo necesites.          |
 
-> 💡 **Tip**: Usa *Clonar* para duplicar documentos frecuentes como actas, informes o formatos de revisión.
+> 💡 **Tip**: Usa _Clonar_ para duplicar documentos frecuentes como actas, informes o formatos de revisión.
 
 ---
 
 ## 📚 ¿Qué sigue después de crear un documento general?
 
 Una vez creado, puedes:
+
 - Añadir **tarjetas** para planificar tareas relacionadas (revisión, aprobación, entrega).
 - Compartirlo con todo el **equipo del programa**.
 - Vincularlo en reuniones o como referencia en otros documentos.
 - Seguir su **progreso** desde el tablero general.
 
 ---
+
+[programa]: /projects/program/
 
 <!--
 ## 🔗 Lectura recomendada

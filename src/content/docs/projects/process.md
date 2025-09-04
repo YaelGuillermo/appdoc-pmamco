@@ -5,7 +5,7 @@ description: Aprende qué es un proceso, cómo crear uno y qué campos debes com
 
 # ¿Qué es un Proceso?
 
-Un **Proceso** es una actividad estructurada y repetible que forma parte del flujo de trabajo dentro de un programa. Representa una tarea de una etapa específica del desarrollo editorial, como diseño, edición, revisión o planificación, y está asociada a un equipo responsable.
+Un **Proceso** es una actividad estructurada y repetible que forma parte del flujo de trabajo dentro de un **[programa]**. Representa una tarea de una etapa específica del desarrollo editorial, como diseño, edición, revisión o planificación, y está asociada a un equipo responsable.
 
 Los procesos permiten organizar el trabajo de forma clara, asignar responsabilidades por área y garantizar que cada tarea crítica se realice en el momento adecuado. Son la base para coordinar equipos especializados y mantener el avance del programa de manera ordenada.
 
@@ -32,10 +32,10 @@ Al crear o actualizar un proceso, deberás completar los siguientes campos. Aqu�
 
 Estos campos **debes completarlos siempre** para poder guardar el proceso.
 
-| Campo | Descripción | Límite | Ejemplo |
-|------|-------------|--------|-------|
-| **Título** | Nombre identificativo del proceso. Debe reflejar claramente la actividad. | Máximo **64 caracteres** | `Revisión de calidad` |
-| **Programa** | El programa al que pertenece este proceso. *(Llenado automático)* | — | `Impact` |
+| Campo        | Descripción                                                               | Límite                   | Ejemplo               |
+| ------------ | ------------------------------------------------------------------------- | ------------------------ | --------------------- |
+| **Título**   | Nombre identificativo del proceso. Debe reflejar claramente la actividad. | Máximo **64 caracteres** | `Revisión de calidad` |
+| **Programa** | El programa al que pertenece este proceso. _(Llenado automático)_         | —                        | `Impact`              |
 
 > ⚠️ **Importante**: Si no completas estos campos, no podrás guardar el proceso.
 
@@ -45,10 +45,10 @@ Estos campos **debes completarlos siempre** para poder guardar el proceso.
 
 Estos campos no son obligatorios, pero ayudan a estructurar mejor tu proceso.
 
-| Campo | Descripción | Opciones disponibles | Ejemplo |
-|------|-------------|------------------------|-------|
-| **Descripción** | Explica el propósito, alcance o criterios del proceso. Ayuda a los equipos a entender su objetivo. | Máximo **512 caracteres** | `Este proceso verifica que todos los libros cumplan con las normas de calidad editorial.` |
-| **Equipo** | Equipo responsable de ejecutar este proceso (por ejemplo, Edición, Diseño, Calidad, etc.). *Excepto el equipo de Invitados.* | `Tráfico`, `Diseño`, `Edición`, `Multimedia`, `Planificación`, `Traducción`, entre otros. | `Control de Calidad` |
+| Campo           | Descripción                                                                                                                  | Opciones disponibles                                                                      | Ejemplo                                                                                   |
+| --------------- | ---------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| **Descripción** | Explica el propósito, alcance o criterios del proceso. Ayuda a los equipos a entender su objetivo.                           | Máximo **512 caracteres**                                                                 | `Este proceso verifica que todos los libros cumplan con las normas de calidad editorial.` |
+| **Equipo**      | Equipo responsable de ejecutar este proceso (por ejemplo, Edición, Diseño, Calidad, etc.). _Excepto el equipo de Invitados._ | `Tráfico`, `Diseño`, `Edición`, `Multimedia`, `Planificación`, `Traducción`, entre otros. | `Control de Calidad`                                                                      |
 
 ---
 
@@ -58,7 +58,7 @@ Estos campos no son obligatorios, pero ayudan a estructurar mejor tu proceso.
   Solo puedes tener **500 procesos activos** a la vez dentro de un programa. Si necesitas crear uno nuevo, deberás archivar uno anterior.
 
 - 🔒 **Títulos únicos por programa**
-No se puede crear un proceso con el mismo título que otro existente en el mismo programa, a menos que sean de equipos diferentes.
+  No se puede crear un proceso con el mismo título que otro existente en el mismo programa, a menos que sean de equipos diferentes.
 
 ---
 
@@ -76,20 +76,21 @@ Desde el menú de cada proceso, puedes realizar acciones clave con un clic. Aqu�
 
 ![Actions](/images/en/projects/process/actions.webp)
 
-| Acción | Qué hace |
-|--------|---------|
-| **✏️ Editar** | Permite modificar el título, descripción, equipo del proceso. |
-| **👁️ Ver** | Muestra detalles del proceso: equipo responsable, descripción, etc. |
-| **🗜️ Clonar** | Crea una copia exacta del proceso. Ideal para replicar actividades comunes en otros equipos. |
-| **📦 Archivar** | Retira el proceso de forma temporal. Puedes recuperarlo cuando lo necesites. |
+| Acción          | Qué hace                                                                                     |
+| --------------- | -------------------------------------------------------------------------------------------- |
+| **✏️ Editar**   | Permite modificar el título, descripción, equipo del proceso.                                |
+| **👁️ Ver**      | Muestra detalles del proceso: equipo responsable, descripción, etc.                          |
+| **🗜️ Clonar**   | Crea una copia exacta del proceso. Ideal para replicar actividades comunes en otros equipos. |
+| **📦 Archivar** | Retira el proceso de forma temporal. Puedes recuperarlo cuando lo necesites.                 |
 
-> 💡 **Tip**: Usa *Clonar* para duplicar procesos estándar como “Revisión de calidad” o “Diagramación” en múltiples equipos.
+> 💡 **Tip**: Usa _Clonar_ para duplicar procesos estándar como “Revisión de calidad” o “Diagramación” en múltiples equipos.
 
 ---
 
 ## 📚 ¿Qué sigue después de crear un proceso?
 
 Una vez creado, puedes:
+
 - Asignar **tareas específicas** dentro del proceso.
 - Vincularlo con **libros** o **productos** del programa.
 - Seguir su **progreso** desde el tablero general.
@@ -102,7 +103,6 @@ Una vez creado, puedes:
 Cada proceso pertenece a un equipo funcional. Las opciones disponibles son:
 
 - `Tráfico`
-- `Invitados`
 - `Diseño Instruccional`
 - `Edición`
 - `Diseño`
@@ -123,6 +123,8 @@ Cada proceso pertenece a un equipo funcional. Las opciones disponibles son:
 Estos equipos representan las áreas clave del flujo editorial y ayudan a organizar el trabajo por especialidad.
 
 ---
+
+[programa]: /projects/program/
 
 <!--
 ## 🔗 Lectura recomendada
