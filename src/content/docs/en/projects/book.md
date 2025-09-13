@@ -32,12 +32,12 @@ When creating or updating a book, you'll need to complete the following fields. 
 
 These fields **must always be completed** to save the book.
 
-| Field | Description | Limit | Example |
-|------|-------------|--------|-------|
-| **Title** | Identifying name of the book. Should be clear and representative. | Maximum **64 characters** | `Book` |
-| **Start date** | Day when book activities begin. | — | `January 15, 2025` |
-| **End date** | Official ending day of the book. | — | `June 30, 2025` |
-| **Program** | The program this book belongs to. *(Auto-filled)* | — | `Impact` |
+| Field          | Description                                                       | Limit                     | Example            |
+| -------------- | ----------------------------------------------------------------- | ------------------------- | ------------------ |
+| **Title**      | Identifying name of the book. Should be clear and representative. | Maximum **64 characters** | `Book`             |
+| **Start date** | Day when book activities begin.                                   | —                         | `January 15, 2025` |
+| **End date**   | Official ending day of the book.                                  | —                         | `June 30, 2025`    |
+| **Program**    | The program this book belongs to. _(Auto-filled)_                 | —                         | `Impact`           |
 
 > ⚠️ **Important**: If you don't complete these fields, you won't be able to save the book.
 
@@ -47,12 +47,12 @@ These fields **must always be completed** to save the book.
 
 These fields aren't mandatory but help better structure your book.
 
-| Field | Description | Limit | Example |
-|------|-------------|--------|-------|
-| **Description** | Explains the purpose, objectives or scope of the book. Helps others understand what it's about. | Maximum **512 characters** | `This book covers best practices for technical writing in professional documents.` |
-| **Number** | Sequential number of the book within the program. Helps order books logically. | Between **1 and 15** | `3` |
-| **Page count** | Approximate number of pages in the book. Useful for planning size and work duration. | Between **25 and 450** pages | `120` |
-| **Parent book** | Optional. Allows hierarchical organization, creating sub-books under a main book. *(Auto-filled)* | — | `Book` |
+| Field           | Description                                                                                       | Limit                        | Example                                                                            |
+| --------------- | ------------------------------------------------------------------------------------------------- | ---------------------------- | ---------------------------------------------------------------------------------- |
+| **Description** | Explains the purpose, objectives or scope of the book. Helps others understand what it's about.   | Maximum **512 characters**   | `This book covers best practices for technical writing in professional documents.` |
+| **Number**      | Sequential number of the book within the program. Helps order books logically.                    | Between **1 and 15**         | `3`                                                                                |
+| **Page count**  | Approximate number of pages in the book. Useful for planning size and work duration.              | Between **25 and 450** pages | `120`                                                                              |
+| **Parent book** | Optional. Allows hierarchical organization, creating sub-books under a main book. _(Auto-filled)_ | —                            | `Book`                                                                             |
 
 ---
 
@@ -61,7 +61,7 @@ These fields aren't mandatory but help better structure your book.
 - 🔒 **Maximum 15 active books per program**  
   You can only have **15 active books** at a time within a program. If you need to create a new one, you'll have to archive a previous one.
 
-- 📅 **Dates must make sense**  
+- 📅 **Dates must make sense**
   - The book must start **on or after** the start date of its **program** (if main) or **parent book** (if sub-book).
   - It must end **on or before** the end date of that same context.
   - Also, the **start date cannot be after the end date**. You can't create a book that ends before it starts.
@@ -87,20 +87,21 @@ In the book interface, you'll find several quick actions available to efficientl
 
 ![Actions](/images/en/projects/book/actions.webp)
 
-| Action | What it does |
-|--------|---------|
-| **🗜️ Clone** | Creates a deep copy of the book and nested objects (sub-books, grades, sessions, etc.). Useful for replicating complex structures. |
-| **📄 Duplicate** | Creates a shallow copy of the book (without internal content). Ideal as a template. |
-| **✏️ Edit** | Allows modifying the book. |
-| **👁️ View** | Shows book details: title, description, dates, number, etc. |
-| **🖼️ Photo** | Displays the image or cover associated with the book. |
-| **📦 Archive** | Temporarily removes the book. You can restore it when needed. |
+| Action           | What it does                                                                                                                       |
+| ---------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| **🗜️ Clone**     | Creates a deep copy of the book and nested objects (sub-books, grades, sessions, etc.). Useful for replicating complex structures. |
+| **📄 Duplicate** | Creates a shallow copy of the book (without internal content). Ideal as a template.                                                |
+| **✏️ Edit**      | Allows modifying the book.                                                                                                         |
+| **👁️ View**      | Shows book details: title, description, dates, number, etc.                                                                        |
+| **🖼️ Photo**     | Displays the image or cover associated with the book.                                                                              |
+| **📦 Archive**   | Temporarily removes the book. You can restore it when needed.                                                                      |
 
 ---
 
 ## 📚 What's next after creating a book?
 
 Once created, you can:
+
 - Add **sub-books** and **grades** to the book
 - Track the **book's progress** from the dashboard
 - Mark the book as **favorite** for quick access

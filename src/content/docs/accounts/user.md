@@ -5,13 +5,14 @@ description: Aprende qué es un usuario en el sistema, qué roles puede tener y 
 
 # ¿Qué es un Usuario?
 
-Un **Usuario** representa a una persona registrada en la plataforma, con credenciales de acceso y un **rol asignado**.  
-Los usuarios son la base del sistema: pueden crear o unirse a **[programas]**, participar como **[miembros]**, y colaborar en tareas, libros, recursos y más, según los permisos otorgados.
+Un **Usuario** representa a una persona registrada en la plataforma, con credenciales de acceso y un rol asignado.  
+Los usuarios son la base del sistema: pueden crear o unirse a **[programas]** como **[miembros]**, y colaborar en tareas, libros, recursos y más, según los permisos otorgados.
 
 ![Overview](/images/en/accounts/user/overview.webp)
 
 ---
 
+<!--
 ## ¿Para qué sirve un Usuario?
 
 - ✅ **Acceder al sistema** mediante correo y contraseña.
@@ -20,6 +21,7 @@ Los usuarios son la base del sistema: pueden crear o unirse a **[programas]**, p
 - ✅ **Controlar permisos** como la posibilidad de crear programas.
 
 ---
+-->
 
 ## Campos del Usuario
 
@@ -29,23 +31,24 @@ Cada usuario tiene los siguientes atributos:
 
 ### 📌 Campos obligatorios
 
-| Campo        | Descripción                                                | Límite                   | Ejemplo                  |
-| ------------ | ---------------------------------------------------------- | ------------------------ | ------------------------ |
-| **Email**    | Correo electrónico único del usuario. Se usa para acceder. | Máximo **64 caracteres** | `ana.torres@example.com` |
-| **Nombre**   | Nombre de pila. Validado con reglas de formato.            | Máximo **32 caracteres** | `Ana`                    |
-| **Apellido** | Apellido del usuario. Validado con reglas de formato.      | Máximo **32 caracteres** | `Torres`                 |
+| Campo          | Descripción                                                | Límite                    | Ejemplo                     |
+| -------------- | ---------------------------------------------------------- | ------------------------- | --------------------------- |
+| **Email**      | Correo electrónico único del usuario. Se usa para acceder. | Máximo **64 caracteres**  | `ana.torres@amcoonline.net` |
+| **Nombre**     | Nombre de pila.                                            | Máximo **32 caracteres**  | `Ana`                       |
+| **Apellido**   | Apellido del usuario.                                      | Máximo **32 caracteres**  | `Torres`                    |
+| **Contraseña** | Clave del usuario. Se usa para acceder.                    | Máximo **128 caracteres** | `Amc0-ROB-12B`              |
 
 ---
 
 ### 🔤 Campos adicionales
 
-| Campo                     | Descripción                                                   | Opciones / Tipo             | Ejemplo               |
+| Campo                     | Descripción                                                   | Ejemplo                     |
 | ------------------------- | ------------------------------------------------------------- | --------------------------- | --------------------- |
 | **Rol**                   | Define el nivel del usuario en el sistema.                    | `Usuario`, `Staff`, `Admin` | `Usuario`             |
-| **Puede crear programas** | Indica si el usuario puede iniciar nuevos programas.          | Booleano                    | `True`                |
-| **Activo**                | Estado de la cuenta (`true` = activa, `false` = desactivada). | Booleano                    | `True`                |
-| **Staff**                 | Marca si el usuario pertenece al equipo de staff (interno).   | Booleano                    | `False`               |
-| **Fecha de registro**     | Fecha en que el usuario se unió al sistema.                   | Automática                  | `2025-02-14 12:15:10` |
+| **Puede crear programas** | Indica si el usuario puede iniciar nuevos programas.          | `True`                      |
+| **Activo**                | Estado de la cuenta (`true` = activa, `false` = desactivada). | `True`                      |
+| **Staff**                 | Marca si el usuario pertenece al equipo de staff (interno).   | `False`                     |
+| **Fecha de registro**     | Fecha en que el usuario se unió al sistema.                   |                             | `2025-02-14 12:15:10` |
 
 ---
 

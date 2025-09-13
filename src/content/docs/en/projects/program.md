@@ -32,12 +32,12 @@ When creating or updating a program, you'll need to complete the following field
 
 These fields **must always be completed** to save the program.
 
-| Field | Description | Limit | Example |
-|------|-------------|--------|-------|
-| **Title** | Identifying name of the program. Should be clear and representative. | Maximum **64 characters** | `Impact` |
-| **Start date** | Day when program activities begin. | — | `January 15, 2025` |
-| **End date** | Official ending day of the program. | — | `June 30, 2025` |
-| **Owner** | Person responsible for the program. *(Automatic filling)* | — | `Claudia Domínguez` |
+| Field          | Description                                                          | Limit                     | Example             |
+| -------------- | -------------------------------------------------------------------- | ------------------------- | ------------------- |
+| **Title**      | Identifying name of the program. Should be clear and representative. | Maximum **64 characters** | `Impact`            |
+| **Start date** | Day when program activities begin.                                   | —                         | `January 15, 2025`  |
+| **End date**   | Official ending day of the program.                                  | —                         | `June 30, 2025`     |
+| **Owner**      | Person responsible for the program. _(Automatic filling)_            | —                         | `Claudia Domínguez` |
 
 > ⚠️ **Important**: If you don't complete these fields, you won't be able to save the program.
 
@@ -47,12 +47,12 @@ These fields **must always be completed** to save the program.
 
 These fields aren't mandatory but help better structure your program.
 
-| Field | Description | Available options | Example |
-|------|-------------|------------------------|-------|
-| **Description** | Explains the purpose, objectives or scope of the program. Helps others understand what it's about. | Maximum **512 characters** | `This program covers the creation of technical documentation using Starlight.` |
-| **Icon** | Visual symbol representing the program. Helps quickly identify it in lists or boards. | `Letter`, `Anchor`, `Globe`, `Briefcase`, `Chart`, `User Group` | `Letter` |
-| **Period** | Program work cycle. Defines how often progress is delivered. | `Monthly`, `Bimonthly`, `Quarterly`, `Four-monthly`, `Semester`, `Annual` | `Semester` |
-| **Language** | Primary language of the program's content. | `Spanish`, `Portuguese (Brazil)`, `English` | `Spanish` |
+| Field           | Description                                                                                        | Available options                                                         | Example                                                                        |
+| --------------- | -------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------------ |
+| **Description** | Explains the purpose, objectives or scope of the program. Helps others understand what it's about. | Maximum **512 characters**                                                | `This program covers the creation of technical documentation using Starlight.` |
+| **Icon**        | Visual symbol representing the program. Helps quickly identify it in lists or boards.              | `Letter`, `Anchor`, `Globe`, `Briefcase`, `Chart`, `User Group`           | `Letter`                                                                       |
+| **Period**      | Program work cycle. Defines how often progress is delivered.                                       | `Monthly`, `Bimonthly`, `Quarterly`, `Four-monthly`, `Semester`, `Annual` | `Semester`                                                                     |
+| **Language**    | Primary language of the program's content.                                                         | `Spanish`, `Portuguese (Brazil)`, `English`                               | `Spanish`                                                                      |
 
 ---
 
@@ -82,6 +82,7 @@ These fields aren't mandatory but help better structure your program.
 ## 📚 What's next after creating a program?
 
 Once created, you can:
+
 - Add **books** and **documents** to the program
 - Add **base products** and **peripherals** to the program
 - Invite **team members** to collaborate
