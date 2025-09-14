@@ -1,127 +1,130 @@
 ---
-title: Book
-description: Learn what a book is, how to create one, and which fields you need to complete.
+title: Libro
+description: Aprende qué es un libro, cómo crear uno y qué campos debes completar.
 ---
 
-# What is a Book?
+# ¿Qué es un Libro?
 
-A **Book** is a core product that materializes a program's purpose. It's the fundamental work unit within a program where specific contents are structured, organized, and developed. Books can be manuals, guides, technical documents, or any other type of educational or editorial material.
+Un **Libro** es un producto principal que materializa el propósito de un **[programa]**. Es la unidad fundamental de trabajo dentro de un programa, donde se estructuran, organizan y desarrollan los contenidos específicos. Los libros pueden ser manuales, guías, documentos técnicos o cualquier otro tipo de material educativo o editorial.
 
-Books form the foundation of any program and allow breaking down large projects into manageable parts. Additionally, you can organize them hierarchically, as a book can contain sub-books (book divisions), making it easier to manage complex content.
+Los libros son la base de cualquier programa y permiten dividir grandes proyectos en partes manejables. Además, puedes organizarlos jerárquicamente, ya que un libro puede contener sub-libros (división del libro), lo que facilita la organización de contenido complejo.
 
 ![Overview](/images/en/projects/book/overview.webp)
 
 ---
 
-## What is a Book used for?
+## ¿Para qué sirve un Libro?
 
-- ✅ **Organizes content** into logical, manageable units
-- ✅ **Defines the sequence** of project development
-- ✅ **Assigns responsibilities** through team members
-- ✅ **Facilitates progress tracking** for the team
+- ✅ **Organiza el contenido** en unidades lógicas y manejables.
+- ✅ **Define la secuencia** de desarrollo del proyecto.
+- ✅ **Asigna responsabilidades** a través de miembros del equipo.
+- ✅ **Facilita el seguimiento del progreso** por parte del equipo.
 
 ---
 
-## Book Fields
+## Campos del Libro
 
-When creating or updating a book, you'll need to complete the following fields. Here we explain what each one means, which are mandatory, and which have available options.
+Al crear o actualizar un libro, deberás completar los siguientes campos. Aquí te explicamos qué significa cada uno, cuáles son obligatorios y cuáles tienen opciones disponibles.
 
 ![Create](/images/en/projects/book/create.webp)
 
-### 📌 Mandatory fields
+### 📌 Campos obligatorios
 
-These fields **must always be completed** to save the book.
+Estos campos **debes completarlos siempre** para poder guardar el libro.
 
-| Field          | Description                                                       | Limit                     | Example            |
-| -------------- | ----------------------------------------------------------------- | ------------------------- | ------------------ |
-| **Title**      | Identifying name of the book. Should be clear and representative. | Maximum **64 characters** | `Book`             |
-| **Start date** | Day when book activities begin.                                   | —                         | `January 15, 2025` |
-| **End date**   | Official ending day of the book.                                  | —                         | `June 30, 2025`    |
-| **Program**    | The program this book belongs to. _(Auto-filled)_                 | —                         | `Impact`           |
+| Campo               | Descripción                                                       | Límite                   | Ejemplo               |
+| ------------------- | ----------------------------------------------------------------- | ------------------------ | --------------------- |
+| **Título**          | Nombre identificativo del libro. Debe ser claro y representativo. | Máximo **64 caracteres** | `Libro`               |
+| **Fecha de inicio** | Día en que comienzan las actividades del libro.                   | —                        | `15 de enero de 2025` |
+| **Fecha final**     | Día en que termina oficialmente el libro.                         | —                        | `30 de junio de 2025` |
+| **Programa**        | El programa al que pertenece este libro. _(Llenado automático)_   | —                        | `Impact`              |
 
-> ⚠️ **Important**: If you don't complete these fields, you won't be able to save the book.
-
----
-
-### 🔤 Optional (but recommended) fields
-
-These fields aren't mandatory but help better structure your book.
-
-| Field           | Description                                                                                       | Limit                        | Example                                                                            |
-| --------------- | ------------------------------------------------------------------------------------------------- | ---------------------------- | ---------------------------------------------------------------------------------- |
-| **Description** | Explains the purpose, objectives or scope of the book. Helps others understand what it's about.   | Maximum **512 characters**   | `This book covers best practices for technical writing in professional documents.` |
-| **Number**      | Sequential number of the book within the program. Helps order books logically.                    | Between **1 and 15**         | `3`                                                                                |
-| **Page count**  | Approximate number of pages in the book. Useful for planning size and work duration.              | Between **25 and 450** pages | `120`                                                                              |
-| **Parent book** | Optional. Allows hierarchical organization, creating sub-books under a main book. _(Auto-filled)_ | —                            | `Book`                                                                             |
+> ⚠️ **Importante**: Si no completas estos campos, no podrás guardar el libro.
 
 ---
 
-## 📏 Important limits and rules
+### 🔤 Campos opcionales (pero recomendados)
 
-- 🔒 **Maximum 15 active books per program**  
-  You can only have **15 active books** at a time within a program. If you need to create a new one, you'll have to archive a previous one.
+Estos campos no son obligatorios, pero ayudan a estructurar mejor tu libro.
 
-- 📅 **Dates must make sense**
-  - The book must start **on or after** the start date of its **program** (if main) or **parent book** (if sub-book).
-  - It must end **on or before** the end date of that same context.
-  - Also, the **start date cannot be after the end date**. You can't create a book that ends before it starts.
-
-- 🔄 **Progress is calculated automatically**  
-  The system monitors book progress within the program. You can view it in the general report.
-
----
-
-## 💡 Tips for creating a good book
-
-- Use a **clear and specific title**, avoid generic names like "Document 1".
-- Take advantage of the **description** to explain the book's purpose and scope.
-- Define a **sequential number** that reflects logical order within the program.
-- Assign an **owner** to ensure someone is responsible for development.
-- Consider using **sub-books** if you need to divide content into smaller sections.
+| Campo                 | Descripción                                                                                                            | Límite                     | Ejemplo                                                                                      |
+| --------------------- | ---------------------------------------------------------------------------------------------------------------------- | -------------------------- | -------------------------------------------------------------------------------------------- |
+| **Descripción**       | Explica el propósito, objetivos o alcance del libro. Ayuda a otros a entender de qué se trata.                         | Máximo **512 caracteres**  | `Este libro cubre las mejores prácticas de redacción técnica para documentos profesionales.` |
+| **Número**            | Número secuencial del libro dentro del programa. Ayuda a ordenar los libros en una secuencia lógica.                   | Entre **1 y 15**           | `3`                                                                                          |
+| **Grupo**             | Define el público objetivo del libro.                                                                                  | `Estudiante`, `Docente`    | `Estudiante`                                                                                 |
+| **Cuenta de páginas** | Número aproximado de páginas del libro. Útil para planificar el tamaño y la duración del trabajo.                      | Entre **25 y 450** páginas | `120`                                                                                        |
+| **Libro padre**       | Opcional. Permite organizar libros jerárquicamente, creando sub-libros bajo un libro principal. _(Llenado automático)_ | —                          | `Libro`                                                                                      |
 
 ---
 
-## 🚀 Actions
+## 📏 Límites y reglas importantes
 
-In the book interface, you'll find several quick actions available to efficiently manage your books. Here's what each one does:
+- 🔒 **Máximo 15 libros activos por programa**  
+  Solo puedes tener **15 libros activos** a la vez dentro de un programa. Si necesitas crear uno nuevo, deberás archivar uno anterior.
+
+- 📅 **Las fechas deben tener sentido**
+  - El libro debe comenzar **después o en** la fecha de inicio de su **programa** (si es principal) o de su **libro padre** (si es sub-libro).
+  - Debe terminar **antes o en** la fecha final de ese mismo contexto.
+  - Además, la **fecha de inicio no puede ser posterior a la fecha final**. No puedes crear un libro que termine antes de empezar.
+
+- 🔄 **El progreso se calcula automáticamente**  
+  El sistema monitorea el avance de los libros dentro del programa. Puedes verlo en el reporte general.
+
+---
+
+## 💡 Consejos para crear un buen libro
+
+- Usa un **título claro y específico**, evita nombres genéricos como “Libro 1”.
+- Aprovecha la **descripción** para explicar el propósito y alcance del libro.
+- Define un **número secuencial** que refleje la secuencia lógica dentro del programa.
+- Asigna un **responsable** para garantizar que alguien esté a cargo del desarrollo.
+- Considera usar **sub-libros** si necesitas dividir el contenido en secciones más pequeñas.
+
+---
+
+## 🚀 Acciones
+
+En la interfaz de libros, encontrarás varias acciones rápidas disponibles para gestionar tus libros de manera eficiente. Aquí te explicamos qué hace cada una:
 
 ![Actions](/images/en/projects/book/actions.webp)
 
-| Action           | What it does                                                                                                                       |
-| ---------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| **🗜️ Clone**     | Creates a deep copy of the book and nested objects (sub-books, grades, sessions, etc.). Useful for replicating complex structures. |
-| **📄 Duplicate** | Creates a shallow copy of the book (without internal content). Ideal as a template.                                                |
-| **✏️ Edit**      | Allows modifying the book.                                                                                                         |
-| **👁️ View**      | Shows book details: title, description, dates, number, etc.                                                                        |
-| **🖼️ Photo**     | Displays the image or cover associated with the book.                                                                              |
-| **📦 Archive**   | Temporarily removes the book. You can restore it when needed.                                                                      |
+| Acción          | Qué hace                                                                                                                                 |
+| --------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| **🗜️ Clonar**   | Crea una copia profunda del libro y los objetos anidados (sub-libros, grados, sesiones, etc.). Útil para replicar estructuras complejas. |
+| **📄 Duplicar** | Crea una copia superficial del libro (sin contenido interno). Ideal como plantilla.                                                      |
+| **✏️ Editar**   | Permite modificar el libro.                                                                                                              |
+| **👁️ Ver**      | Muestra detalles del libro: título, descripción, fechas, número, etc.                                                                    |
+| **🖼️ Foto**     | Muestra la imagen o portada asociada al libro.                                                                                           |
+| **📦 Archivar** | Retira el libro de forma temporal. Puedes recuperarlo cuando lo necesites.                                                               |
 
 ---
 
-## 📚 What's next after creating a book?
+## 📚 ¿Qué sigue después de crear un libro?
 
-Once created, you can:
+Una vez creado, puedes:
 
-- Add **sub-books** and **grades** to the book
-- Track the **book's progress** from the dashboard
-- Mark the book as **favorite** for quick access
+- Añadir **sub-libros** y **grados** al libro.
+- Seguir el **progreso del libro** desde el tablero.
+- Marcar el libro como **favorito** para acceder rápidamente.
+
+---
+
+## 📝 Notas adicionales sobre la recursividad
+
+Un libro puede contener **sub-libros** (división del libro), lo que permite organizar el contenido de manera jerárquica. Por ejemplo:
+
+- **Libro Principal**: "Manual de Redacción Técnica"
+  - **Sub-Libro 1**: "Capítulo 1: Introducción a la Redacción Técnica"
+  - **Sub-Libro 2**: "Capítulo 2: Estilo y Estructura de Documentos"
+
+Esta estructura jerárquica te ayuda a manejar proyectos grandes dividiéndolos en partes más pequeñas y manejables.
 
 ---
 
-## 📝 Additional notes about recursion
-
-A book can contain **sub-books** (book divisions), allowing hierarchical content organization. For example:
-
-- **Main Book**: "Technical Writing Manual"
-  - **Sub-Book 1**: "Chapter 1: Introduction to Technical Writing"
-  - **Sub-Book 2**: "Chapter 2: Document Style and Structure"
-
-This hierarchical structure helps manage large projects by breaking them into smaller, more manageable parts.
-
----
+[programa]: /projects/program/
 
 <!--
-## 🔗 Recommended reading
+## 🔗 Lectura recomendada
 
-- [What is a how-to guide?](https://diataxis.fr/how-to-guides/) – Learn how to structure practical and effective documentation.
+- [¿Qué es una guía de cómo hacerlo?](https://diataxis.fr/how-to-guides/) – Aprende a estructurar documentación práctica y efectiva.
 -->

@@ -5,7 +5,7 @@ description: Aprende qué es un documento general, cómo crear uno y qué campos
 
 # ¿Qué es un Documento General?
 
-Un **Documento General** es un archivo o recurso independiente que forma parte de un programa, pero que no pertenece directamente a un libro. Sirve para gestionar contenido relevante como actas, informes, guías institucionales, lineamientos editoriales o cualquier otro documento clave para el desarrollo del programa.
+Un **Documento General** es un archivo o recurso independiente que forma parte de un **[programa]**, pero que no pertenece directamente a un libro. Sirve para gestionar contenido relevante como actas, informes, guías institucionales, lineamientos editoriales o cualquier otro documento clave para el desarrollo del programa.
 
 Los documentos generales permiten mantener organizada la información complementaria que el equipo necesita, sin saturar la estructura de los libros. Son ideales para tareas transversales, seguimiento administrativo o decisiones colectivas.
 
@@ -101,6 +101,8 @@ Una vez creado, puedes:
 - Seguir su **progreso** desde el tablero general.
 
 ---
+
+[programa]: /projects/program/
 
 <!--
 ## 🔗 Lectura recomendada

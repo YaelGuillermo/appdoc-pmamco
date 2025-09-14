@@ -1,97 +1,97 @@
 ---
-title: Program
-description: Learn what a program is, how to create one, and which fields you need to complete.
+title: Programa
+description: Aprende qué es un programa, cómo crear uno y qué campos debes completar.
 ---
 
-# What is a Program?
+# ¿Qué es un Programa?
 
-A **Program** is an organized initiative that brings together books, documents, resources, and team members under a **common, specific objective**. It can be either an editorial department project or a structured course with defined start, development, and end phases.
+Un **Programa** es una iniciativa organizada que reúne libros, documentos, recursos y miembros de equipo bajo un **objetivo común y concreto**. Es un proyecto que pertenece al departamento de Editorial o un curso estructurado que tiene un inicio, un desarrollo y un cierre definidos.
 
-Programs help maintain focused, measurable work aligned with specific goals. Whether you're coordinating a book series, an academic course, or a thematic content collection, the program is the structure that contains everything.
+Los programas ayudan a mantener el trabajo enfocado, medible y alineado con metas específicas. Ya sea que estés coordinando una serie de libros, un curso académico o una colección temática de contenido, el programa es la estructura que lo contiene todo.
 
 ![Overview](/images/en/projects/program/overview.webp)
 
 ---
 
-## What is a Program used for?
+## ¿Para qué sirve un Programa?
 
-- ✅ **Organizes large projects** into manageable blocks
-- ✅ **Groups people and resources** under a shared vision
-- ✅ **Establishes clear timelines** with start and end dates
-- ✅ **Facilitates progress tracking** of the work
+- ✅ **Organiza proyectos grandes** en bloques manejables.
+- ✅ **Agrupa personas y recursos** bajo una misma visión.
+- ✅ **Establece plazos claros** con fechas de inicio y fin.
+- ✅ **Facilita el seguimiento del progreso** del trabajo.
 
 ---
 
-## Program Fields
+## Campos del Programa
 
-When creating or updating a program, you'll need to complete the following fields. Here we explain what each one means, which are mandatory, and which have available options.
+Al crear o actualizar un programa, deberás completar los siguientes campos. Aquí te explicamos qué significa cada uno, cuáles son obligatorios y cuáles tienen opciones disponibles.
 
 ![Create](/images/en/projects/program/create.webp)
 
-### 📌 Mandatory fields
+### 📌 Campos obligatorios
 
-These fields **must always be completed** to save the program.
+Estos campos **debes completarlos siempre** para poder guardar el programa.
 
-| Field          | Description                                                          | Limit                     | Example             |
-| -------------- | -------------------------------------------------------------------- | ------------------------- | ------------------- |
-| **Title**      | Identifying name of the program. Should be clear and representative. | Maximum **64 characters** | `Impact`            |
-| **Start date** | Day when program activities begin.                                   | —                         | `January 15, 2025`  |
-| **End date**   | Official ending day of the program.                                  | —                         | `June 30, 2025`     |
-| **Owner**      | Person responsible for the program. _(Automatic filling)_            | —                         | `Claudia Domínguez` |
+| Campo               | Descripción                                                          | Límite                   | Ejemplo               |
+| ------------------- | -------------------------------------------------------------------- | ------------------------ | --------------------- |
+| **Título**          | Nombre identificativo del programa. Debe ser claro y representativo. | Máximo **64 caracteres** | `Impact`              |
+| **Fecha de inicio** | Día en que comienzan las actividades del programa.                   | —                        | `15 de enero de 2025` |
+| **Fecha final**     | Día en que termina oficialmente el programa.                         | —                        | `30 de junio de 2025` |
+| **Dueño**           | Persona responsable del programa. _(Llenado automático)_             | —                        | `Claudia Domínguez`   |
 
-> ⚠️ **Important**: If you don't complete these fields, you won't be able to save the program.
-
----
-
-### 🔤 Optional (but recommended) fields
-
-These fields aren't mandatory but help better structure your program.
-
-| Field           | Description                                                                                        | Available options                                                         | Example                                                                        |
-| --------------- | -------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------------ |
-| **Description** | Explains the purpose, objectives or scope of the program. Helps others understand what it's about. | Maximum **512 characters**                                                | `This program covers the creation of technical documentation using Starlight.` |
-| **Icon**        | Visual symbol representing the program. Helps quickly identify it in lists or boards.              | `Letter`, `Anchor`, `Globe`, `Briefcase`, `Chart`, `User Group`           | `Letter`                                                                       |
-| **Period**      | Program work cycle. Defines how often progress is delivered.                                       | `Monthly`, `Bimonthly`, `Quarterly`, `Four-monthly`, `Semester`, `Annual` | `Semester`                                                                     |
-| **Language**    | Primary language of the program's content.                                                         | `Spanish`, `Portuguese (Brazil)`, `English`                               | `Spanish`                                                                      |
+> ⚠️ **Importante**: Si no completas estos campos, no podrás guardar el programa.
 
 ---
 
-## 📏 Important limits and rules
+### 🔤 Campos opcionales (pero recomendados)
 
-- 🔒 **Maximum 5 active programs per person**  
-  You can only have **5 active programs** at a time as owner. If you need to create a new one, you'll have to archive a previous one.
+Estos campos no son obligatorios, pero ayudan a estructurar mejor tu programa.
 
-- 📅 **Dates must make sense**  
-  The **start date** must be before or equal to the **end date**. You can't create a program that ends before it starts.
-
-- 🔄 **Progress is calculated automatically**  
-  The system monitors the progress of books and documents within the program. You can view it in the general report.
-
----
-
-## 💡 Tips for creating a good program
-
-- Use a **clear and specific title**, avoid generic names like "Project 1".
-- Take advantage of the **description** to explain why this program exists and what it aims to achieve.
-- Choose an **icon** related to the topic (e.g., a globe for international subjects).
-- Define a **realistic period** according to workload: monthly for intensive projects, semester for long courses.
-- Always check dates: a well-planned program facilitates teamwork.
+| Campo           | Descripción                                                                                        | Opciones disponibles                                                        | Ejemplo                                                                      |
+| --------------- | -------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| **Descripción** | Explica el propósito, objetivos o alcance del programa. Ayuda a otros a entender de qué se trata.  | Máximo **512 caracteres**                                                   | `Este programa cubre la creación de documentación técnica usando Starlight.` |
+| **Ícono**       | Símbolo visual que representa al programa. Ayuda a identificarlo rápidamente en listas o tableros. | `Letra`, `Ancla`, `Globo`, `Maletín`, `Gráfico`, `Grupo de usuarios`        | `Letra`                                                                      |
+| **Periodo**     | Ciclo de trabajo del programa. Define cada cuánto tiempo se entregan avances.                      | `Mensual`, `Bimestral`, `Trimestral`, `Cuatrimestral`, `Semestral`, `Anual` | `Semestral`                                                                  |
+| **Lenguaje**    | Idioma principal de los contenidos del programa.                                                   | `Español`, `Portugués (Brasil)`, `Inglés`                                   | `Español`                                                                    |
 
 ---
 
-## 📚 What's next after creating a program?
+## 📏 Límites y reglas importantes
 
-Once created, you can:
+- 🔒 **Máximo 5 programas activos por persona**  
+  Solo puedes tener **5 programas activos** a la vez como dueño. Si necesitas crear uno nuevo, deberás archivar uno anterior.
 
-- Add **books** and **documents** to the program
-- Add **base products** and **peripherals** to the program
-- Invite **team members** to collaborate
-- Track **overall progress** from the dashboard
+- 📅 **Las fechas deben tener sentido**  
+  La **fecha de inicio** debe ser anterior o igual a la **fecha final**. No puedes crear un programa que termine antes de empezar.
+
+- 🔄 **El progreso se calcula automáticamente**  
+  El sistema monitorea el avance de los libros y documentos dentro del programa. Puedes verlo en el reporte general.
+
+---
+
+## 💡 Consejos para crear un buen programa
+
+- Usa un **título claro y específico**, evita nombres genéricos como “Proyecto 1”.
+- Aprovecha la **descripción** para explicar por qué existe este programa y qué se espera lograr.
+- Elige un **ícono** que tenga relación con el tema (por ejemplo, un globo para temas internacionales).
+- Define un **periodo realista** según la carga de trabajo: mensual para proyectos intensivos, semestral para cursos largos.
+- Revisa siempre las fechas: un programa bien planificado facilita el trabajo en equipo.
+
+---
+
+## 📚 ¿Qué sigue después de crear un programa?
+
+Una vez creado, puedes:
+
+- Añadir **libros** y **documentos** al programa.
+- Añadir **productos base** y **periféricos** al programa.
+- Invitar a **miembros del equipo** para colaborar.
+- Seguir el **progreso general** desde el tablero.
 
 ---
 
 <!--
-## 🔗 Recommended reading
+## 🔗 Lectura recomendada
 
-- [What is a how-to guide?](https://diataxis.fr/how-to-guides/) – Learn how to structure practical and effective documentation.
+- [¿Qué es una guía de cómo hacerlo?](https://diataxis.fr/how-to-guides/) – Aprende a estructurar documentación práctica y efectiva.
 -->
