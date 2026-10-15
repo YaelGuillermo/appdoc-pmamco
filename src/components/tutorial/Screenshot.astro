@@ -1,0 +1,50 @@
+---
+import { existsSync } from 'node:fs';
+import { join, relative, sep } from 'node:path';
+import type { Locale } from '../../config/locales';
+import { t } from '../../config/translations';
+import Icon from '../ui/Icon.astro';
+interface Props {
+  file: string;
+  alt: string;
+  caption: string;
+  locale: Locale;
+}
+const { file, alt, caption, locale } = Astro.props;
+const publicRoot = join(process.cwd(), 'public');
+const filePath = join(publicRoot, file.replace(/^\/+/, ''));
+const rel = relative(publicRoot, filePath);
+// Evita que una ruta de contenido salga del directorio de recursos públicos.
+const safe = rel.length > 0 && rel !== '..' && !rel.startsWith(`..${sep}`) && !rel.startsWith(sep);
+const available = safe && existsSync(filePath);
+const dict = t(locale);
+---
+
+<figure class="screenshot">
+  <div class="screenshot__bar">
+    <span class="screenshot__dots" aria-hidden="true"><i></i><i></i><i></i></span><span
+      >PM AMCO Editorial / APP</span
+    >
+  </div>
+  {
+    available ? (
+      <div class="screenshot__image">
+        <img src={file} alt={alt} loading="lazy" decoding="async" />
+      </div>
+    ) : (
+      <div
+        class="screenshot__placeholder"
+        role="img"
+        aria-label={`${dict.screenshotUnavailable}: ${alt}`}
+      >
+        <span class="screenshot__placeholder-icon">
+          <Icon name="image" size={30} />
+        </span>
+        <strong>{dict.screenshotUnavailable}</strong>
+        <span>{dict.screenshotHelper}</span>
+        <code>{file.replace(/^\/+/, '')}</code>
+      </div>
+    )
+  }
+  <figcaption>{caption}</figcaption>
+</figure>

@@ -1,0 +1,204 @@
+---
+import type { Locale } from '../../config/locales';
+import Icon from '../ui/Icon.astro';
+interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+const es = locale === 'es';
+---
+
+<section
+  class="clock-demo"
+  data-clock-demo
+  data-locale={locale}
+  aria-label={es ? 'Simulación del reloj de una tarea' : 'Task clock simulation'}
+>
+  <div class="clock-demo__intro">
+    <div>
+      <span class="eyebrow eyebrow--ink">{es ? 'LABORATORIO DE PRÁCTICA' : 'PRACTICE LAB'}</span><h2
+      >
+        {es ? 'Ahora prueba el reloj.' : 'Try the clock yourself.'}
+      </h2><p>
+        {
+          es
+            ? 'Haz clic para recorrer un ejemplo de dos días. No modifica ninguna tarea real.'
+            : 'Follow a two-day example. This does not update any real tasks.'
+        }
+      </p>
+    </div><span class="demo-index">01 / 01</span>
+  </div>
+  <div class="clock-demo__panel">
+    <div class="clock-demo__panel-top">
+      <span class="clock-demo__app-mark"
+        ><span class="clock-demo__app-dot"></span> {es ? 'TAREA DE EJEMPLO' : 'SAMPLE TASK'}</span
+      ><span class="clock-demo__app-caption">PM AMCO Editorial · DEMO</span>
+    </div>
+    <div class="clock-demo__task">
+      <span class="clock-demo__fake-check" data-demo-checkbox aria-hidden="true"
+        ><Icon name="check" size={20} /></span
+      ><div>
+        <strong>{es ? 'Revisar materiales de la semana' : 'Review this week’s materials'}</strong
+        ><span data-demo-task-status role="status" aria-live="polite"
+          >{es ? 'Pendiente' : 'Pending'}</span
+        >
+      </div><span class="clock-demo__clock-badge"><Icon name="clock" size={18} /></span>
+    </div>
+    <div class="clock-demo__trace">
+      <div class="clock-demo__trace-heading">
+        <span>{es ? 'Registro de tiempo' : 'Time log'}</span><span data-demo-period
+          >{es ? 'Sin intervalos' : 'No intervals'}</span
+        >
+      </div><div class="clock-demo__intervals" data-demo-intervals>
+        <div class="clock-demo__empty">
+          {
+            es
+              ? 'Al comenzar aparecerá tu primer registro aquí.'
+              : 'Your first record will appear here when you start.'
+          }
+        </div>
+      </div>
+    </div>
+    <div class="clock-demo__action">
+      <div class="clock-demo__instruction" data-demo-instruction aria-live="polite">
+        {es ? 'Empieza registrando la hora de inicio.' : 'Start by recording the start time.'}
+      </div><div class="clock-demo__buttons">
+        <button class="button button--dark" type="button" data-demo-next
+          ><span data-demo-next-label>{es ? 'Comenzar ahora' : 'Start now'}</span><Icon
+            name="arrow-right"
+            size={16}
+          /></button
+        ><button type="button" class="button button--outline" data-demo-reset
+          ><Icon name="rotate" size={16} />{es ? 'Reiniciar' : 'Reset'}</button
+        >
+      </div>
+    </div>
+  </div>
+  <p class="clock-demo__disclaimer">
+    <Icon name="shield" size={16} />{
+      es
+        ? 'Ejemplo ilustrativo: utiliza horas fijas para explicar qué cambia en cada acción.'
+        : 'Illustrative example: fixed times show what each action changes.'
+    }
+  </p>
+</section>
+<script>
+  type Stage = 0 | 1 | 2 | 3 | 4;
+  const root = document.querySelector<HTMLElement>('[data-clock-demo]');
+  if (root) {
+    const english = root.dataset.locale === 'en';
+    const label = (es: string, en: string): string => (english ? en : es);
+    const status = root.querySelector<HTMLElement>('[data-demo-task-status]');
+    const check = root.querySelector<HTMLElement>('[data-demo-checkbox]');
+    const intervals = root.querySelector<HTMLElement>('[data-demo-intervals]');
+    const period = root.querySelector<HTMLElement>('[data-demo-period]');
+    const instruction = root.querySelector<HTMLElement>('[data-demo-instruction]');
+    const next = root.querySelector<HTMLButtonElement>('[data-demo-next]');
+    const nextLabel = root.querySelector<HTMLElement>('[data-demo-next-label]');
+    const reset = root.querySelector<HTMLButtonElement>('[data-demo-reset]');
+    let stage: Stage = 0;
+    const safeText = (element: HTMLElement | null, value: string): void => {
+      if (element) element.textContent = value;
+    };
+    function paint(): void {
+      const completed = stage === 4;
+      if (check) check.classList.toggle('is-checked', completed);
+      safeText(
+        status,
+        completed ? label('Completada', 'Completed') : label('Pendiente', 'Pending'),
+      );
+      safeText(
+        period,
+        stage === 0
+          ? label('Sin intervalos', 'No intervals')
+          : stage <= 2
+            ? label('Día 1', 'Day 1')
+            : label('Dos días', 'Two days'),
+      );
+      const labels = [
+        label('Comenzar ahora', 'Start now'),
+        label('Pausar ahora', 'Pause now'),
+        label('Continuar: día 2', 'Resume: day 2'),
+        label('Finalizar ahora', 'Finish now'),
+        label('Recorrido completado', 'Example complete'),
+      ] as const;
+      safeText(nextLabel, labels[stage]);
+      if (next) next.disabled = completed;
+      const hints = [
+        label('Empieza registrando la hora de inicio.', 'Record the start time to begin.'),
+        label(
+          'El reloj está activo, pero la tarea todavía está pendiente.',
+          'The clock is running, but the task is still pending.',
+        ),
+        label(
+          'La pausa guarda el fin del intervalo. La tarea sigue pendiente.',
+          'The pause closes the interval. The task is still pending.',
+        ),
+        label(
+          'Comenzaste un segundo intervalo. Aún no marcas la tarea como completada.',
+          'A second interval started. The task is not yet complete.',
+        ),
+        label(
+          'El segundo intervalo terminó y la casilla quedó marcada.',
+          'The second interval ended and the checkbox is marked.',
+        ),
+      ] as const;
+      safeText(instruction, hints[stage]);
+      if (intervals) {
+        intervals.replaceChildren();
+        if (stage === 0) {
+          const empty = document.createElement('div');
+          empty.className = 'clock-demo__empty';
+          empty.textContent = label(
+            'Al comenzar aparecerá tu primer registro aquí.',
+            'Your first record will appear here.',
+          );
+          intervals.append(empty);
+        } else {
+          const records = [
+            {
+              name: label('DÍA 1', 'DAY 1'),
+              start: '10:00',
+              end: stage === 1 ? '—' : '10:40',
+              ongoing: stage === 1,
+            },
+            ...(stage >= 3
+              ? [
+                  {
+                    name: label('DÍA 2', 'DAY 2'),
+                    start: '12:00',
+                    end: stage === 3 ? '—' : '13:00',
+                    ongoing: stage === 3,
+                  },
+                ]
+              : []),
+          ];
+          for (const record of records) {
+            const row = document.createElement('div');
+            row.className = 'clock-demo__interval';
+            const name = document.createElement('span');
+            name.className = 'clock-demo__interval-name';
+            name.textContent = record.name;
+            const time = document.createElement('strong');
+            time.textContent = `${record.start}   →   ${record.end}`;
+            const badge = document.createElement('small');
+            badge.textContent = record.ongoing
+              ? label('Abierto', 'Open')
+              : label('Cerrado', 'Closed');
+            row.append(name, time, badge);
+            intervals.append(row);
+          }
+        }
+      }
+    }
+    next?.addEventListener('click', () => {
+      if (stage < 4) stage = (stage + 1) as Stage;
+      paint();
+    });
+    reset?.addEventListener('click', () => {
+      stage = 0;
+      paint();
+    });
+    paint();
+  }
+</script>

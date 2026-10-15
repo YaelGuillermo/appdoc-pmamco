@@ -1,0 +1,46 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { readFileSync, readdirSync } from 'node:fs';
+import { join } from 'node:path';
+
+const root = process.cwd();
+const lessonRoot = join(root, 'src/content/lessons/es/registrar-tiempo');
+const files = readdirSync(lessonRoot)
+  .filter((name) => name.endsWith('.md'))
+  .sort();
+const contents = files.map((file) => readFileSync(join(lessonRoot, file), 'utf8'));
+
+const captureList = [
+  '01-tarea-y-casilla.png',
+  '02-reloj-de-tarea.png',
+  '03-nuevo-intervalo.png',
+  '04-pausar-intervalo.png',
+  '05-varios-intervalos.png',
+  '06-ultimo-intervalo.png',
+  '07-dos-menus.png',
+  '08-administrar-intervalos.png',
+  '09-reloj-de-lista.png',
+  '10-acciones-de-lista.png',
+];
+
+test('tutorial has exactly nine ordered lessons', () => {
+  assert.equal(files.length, 9);
+  files.forEach((file, index) => {
+    assert.ok(file.startsWith(`${String(index + 1).padStart(2, '0')}-`));
+    assert.match(contents[index], new RegExp(`^order: ${index + 1}$`, 'm'));
+  });
+});
+test('asset slots use organized public paths', () => {
+  const combined = contents.join('\n');
+  for (const file of captureList)
+    assert.ok(combined.includes(`/assets/tutorials/time-tracking/es/${file}`), file);
+});
+test('lesson content does not treat pausing as completing', () => {
+  assert.match(contents[2], /La tarea \*\*sigue pendiente\*\*/);
+  assert.match(contents[7], /varios relojes de la lista a la vez/);
+});
+test('English routes cannot publish empty content', () => {
+  const config = readFileSync(join(root, 'src/config/locales.ts'), 'utf8');
+  assert.match(config, /DEFAULT_LOCALE: Locale = 'en'/);
+  assert.match(config, /PUBLISHED_LOCALES: readonly Locale\[\] = \['es'\]/);
+});

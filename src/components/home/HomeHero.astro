@@ -1,0 +1,96 @@
+---
+import type { Locale } from '../../config/locales';
+import { routes } from '../../lib/routes';
+import Icon from '../ui/Icon.astro';
+interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+const es = locale === 'es';
+---
+
+<section class="home-hero">
+  <div class="home-hero__grid" aria-hidden="true"></div>
+  <div class="container home-hero__layout">
+    <div class="home-hero__copy">
+      <span class="eyebrow eyebrow--light"
+        ><span class="eyebrow__pin"></span>{
+          es ? 'EL ESPACIO PARA APRENDER' : 'YOUR SPACE TO LEARN'
+        }</span
+      >
+      <h1>
+        {es ? 'Aprende a usar' : 'Learn to use'}
+        <span>{es ? 'PM Amco Editorial,' : 'PM Amco Editorial,'}</span><br />{
+          es ? 'paso a paso.' : 'one step at a time.'
+        }
+      </h1>
+      <p>
+        {
+          es
+            ? 'Guías visuales, instrucciones claras y ejemplos cotidianos. Aquí aprendes haciendo, sin manuales interminables.'
+            : 'Visual guides, clear instructions and relatable examples. Learn by doing—without endless manuals.'
+        }
+      </p>
+      <div class="hero-buttons">
+        <a class="button button--cream" href={routes.tutorials(locale)}
+          >{es ? 'Explorar tutoriales' : 'Explore tutorials'}<Icon
+            name="arrow-right"
+            size={18}
+          /></a
+        ><a class="text-link text-link--light" href="#como-funciona"
+          >{es ? '¿Cómo funciona?' : 'How does it work?'}<span>↘</span></a
+        >
+      </div>
+      <div class="hero-signature">
+        <span class="signature-dash"></span>{
+          es
+            ? 'UNA GUÍA A LA VEZ, MÁS CLARIDAD CADA DÍA'
+            : 'ONE GUIDE AT A TIME, MORE CLARITY EVERY DAY'
+        }
+      </div>
+    </div>
+    <div class="home-hero__art" aria-hidden="true">
+      <div class="art-orbit art-orbit--one"></div><div class="art-orbit art-orbit--two"></div>
+      <div class="art-stamp">PM / <span>GUIDES</span></div>
+      <div class="art-card">
+        <div class="art-card__top">
+          <span class="art-card__dots"><i></i><i></i><i></i></span><span
+            >PM AMCO Editorial · TUTORIAL 01</span
+          >
+        </div>
+        <div class="art-card__content">
+          <div class="art-caption">{es ? 'Tu próxima habilidad' : 'Your next skill'}</div><strong
+            >{es ? 'Registra tu tiempo' : 'Track your time'}</strong
+          ><p>{es ? 'Un paso claro a la vez' : 'One clear step at a time'}</p>
+          <div class="art-timeline">
+            <div class="art-timeline__line"></div><div class="art-timeline__item">
+              <span class="art-timeline__dot art-timeline__dot--done"
+                ><Icon name="check" size={12} /></span
+              ><div><b>10:00</b><small>{es ? 'Comenzar' : 'Start'}</small></div>
+            </div><div class="art-timeline__item">
+              <span class="art-timeline__dot art-timeline__dot--done"
+                ><Icon name="pause" size={11} /></span
+              ><div><b>10:40</b><small>{es ? 'Pausar' : 'Pause'}</small></div>
+            </div><div class="art-timeline__item">
+              <span class="art-timeline__dot art-timeline__dot--last"
+                ><Icon name="check" size={12} /></span
+              ><div><b>13:00</b><small>{es ? 'Terminar' : 'Finish'}</small></div>
+            </div>
+          </div>
+        </div>
+        <div class="art-card__bottom">
+          <span
+            ><Icon name="check-circle" size={15} />{
+              es ? 'APRENDE A TU RITMO' : 'LEARN AT YOUR PACE'
+            }</span
+          ><span>01 / 09</span>
+        </div>
+      </div>
+      <div class="art-float">
+        <span class="art-float__icon"><Icon name="sparkles" size={17} /></span><span
+          >{es ? 'Así de sencillo.' : 'It is this simple.'}</span
+        >
+      </div>
+    </div>
+  </div>
+</section>

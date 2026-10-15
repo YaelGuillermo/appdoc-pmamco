@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://amco.me/sitemap.xml
