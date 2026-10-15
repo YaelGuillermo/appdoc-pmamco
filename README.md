@@ -1,139 +1,65 @@
-````markdown
-# Project Manager Documentation
+# Amco Guide
 
-This repository contains the official documentation for the **Project Manager** platform, built using **Astro Starlight**.
+Sitio de documentación y tutoriales de PM Amco Editorial.
 
-The documentation is available in **English and Spanish** and explains the core concepts, structure, and usage of the platform, including Programs, Projects, resources, and team collaboration.
+Construido con Astro, TypeScript y pnpm.
 
----
+Actualmente, la documentación se publica en español. La arquitectura
+está preparada para incorporar inglés posteriormente.
 
-## 📘 About the Project
+## Requisitos
 
-The Project Manager is a system designed to organize, track, and manage structured initiatives such as editorial projects, academic courses, or content collections.
+- Node.js 22
+- pnpm
 
-### What is a Program?
+## Desarrollo local
 
-A **Program** is an organized initiative that brings together books, documents, resources, and team members under a clear and specific objective.
+Instalar dependencias:
 
-A Program can represent:
-- An editorial project belonging to a publishing department
-- A structured academic course
-- A thematic collection of content with a defined lifecycle
+    pnpm install
 
-Each Program has:
-- A defined start, development, and end
-- Clear goals and measurable outcomes
-- Associated projects, resources, and collaborators
+Iniciar el servidor:
 
-Programs help keep work **focused, measurable, and aligned with strategic goals**, whether you are coordinating a series of books, managing a course, or organizing a content initiative.
+    pnpm dev
 
----
+## Calidad y pruebas
 
-## 🌍 Languages
+Ejecutar todas las validaciones:
 
-The documentation is available in multiple languages:
+    pnpm check
 
-- **English**
-- **Español**
+Este comando verifica:
 
-Language selection is handled through Astro Starlight’s internationalization features.
+- Integridad del contenido
+- Formato con Prettier
+- ESLint
+- Tipos de Astro
+- Pruebas automatizadas
+- Compilación de producción
+- Rutas del sitio generado
 
----
+## Organización del contenido
 
-## 🛠️ Built With
+- `src/content/tutorials/es/`: tutoriales en español.
+- `src/content/lessons/es/`: lecciones en español.
+- `src/content/tutorials/en/`: preparado para futuras traducciones.
+- `src/content/lessons/en/`: preparado para futuras traducciones.
+- `public/assets/`: imágenes y recursos públicos.
+- `envs/`: configuración y ejemplos de entornos.
 
-- [Astro](https://astro.build/)
-- [Astro Starlight](https://starlight.astro.build/)
-- Markdown / MDX
+## Despliegue
 
----
+El sitio se publica en Netlify desde la rama `main`.
 
-## 📂 Project Structure
+Sitio: https://amco-debut.netlify.app/
 
-```text
-.
-├── docs/
-│   ├── en/            # English documentation
-│   ├── es/            # Spanish documentation
-│   └── index.mdx
-├── public/
-├── astro.config.mjs
-├── package.json
-└── README.md
-````
+Configuración de compilación:
 
----
+- Production branch: `main`
+- Build command: `pnpm check`
+- Publish directory: `dist`
 
-## 🚀 Getting Started
+## Contribuciones
 
-### Prerequisites
-
-* Node.js (v18 or higher recommended)
-* npm, pnpm, or yarn
-
-### Installation
-
-```bash
-npm install
-```
-
-### Local Development
-
-```bash
-npm run dev
-```
-
-The documentation site will be available at:
-
-```
-http://localhost:4321
-```
-
----
-
-## 🏗️ Build for Production
-
-```bash
-npm run build
-```
-
-Preview the production build:
-
-```bash
-npm run preview
-```
-
----
-
-## 🤝 Contributing
-
-Contributions are welcome!
-
-If you want to:
-
-* Improve documentation
-* Fix typos or translations
-* Add new sections or examples
-
-Please open an issue or submit a pull request.
-
-### Guidelines
-
-* Keep content clear and concise
-* Ensure consistency between English and Spanish versions
-* Follow existing structure and terminology
-
----
-
-## 📄 License
-
-This documentation is licensed under the **MIT License** (or update this section with your actual license).
-
----
-
-## 📬 Contact
-
-For questions or feedback related to the documentation or the Project Manager platform, please contact the project maintainers or open an issue in this repository.
-
-```
-```
+Los cambios deben desarrollarse en una rama independiente y
+enviarse mediante un Pull Request hacia `main`.

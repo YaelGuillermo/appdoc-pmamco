@@ -1,26 +1,51 @@
 {
   "name": "appdoc-pmamco",
+  "version": "1.0.0",
+  "private": true,
   "type": "module",
-  "version": "0.0.1",
+  "engines": {
+    "node": ">=20.11.0"
+  },
   "scripts": {
-    "dev": "astro dev",
+    "dev": "node scripts/with-env.mjs development astro dev",
     "start": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
+    "build": "node scripts/with-env.mjs production astro build",
+    "preview": "node scripts/with-env.mjs production astro preview",
+    "check": "node scripts/check.mjs",
+    "typecheck": "astro check",
+    "lint": "eslint . --max-warnings=0",
+    "lint:content": "node scripts/check-content.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "quality": "pnpm lint:content && pnpm test && pnpm lint && pnpm check && pnpm build",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "content:check": "node scripts/check-content.mjs",
+    "site:check": "node scripts/check-built-site.mjs",
+    "prepare": "husky"
   },
   "dependencies": {
     "astro": "^5.6.1",
     "sharp": "^0.34.2"
   },
   "devDependencies": {
-    "@astrojs/starlight": "^0.35.2",
-    "@astrojs/tailwind": "^6.0.2",
-    "@types/node": "^24.2.1",
-    "autoprefixer": "^10.4.21",
+    "@astrojs/check": "^0.9.4",
+    "@commitlint/cli": "^19.8.1",
+    "@commitlint/config-conventional": "^19.8.1",
+    "@eslint/js": "^9.30.1",
+    "@types/node": "^22.15.3",
     "eslint": "^9.33.0",
-    "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-astro": "^1.3.1",
-    "prettier": "^3.6.2"
+    "husky": "^9.1.7",
+    "lint-staged": "^15.5.2",
+    "prettier": "^3.6.2",
+    "prettier-plugin-astro": "^0.14.1",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.39.1"
+  },
+  "packageManager": "pnpm@10.17.1",
+  "lint-staged": {
+    "*.{astro,js,cjs,mjs,ts,tsx,css,md,json,yml,yaml}": [
+      "prettier --write"
+    ]
   }
 }

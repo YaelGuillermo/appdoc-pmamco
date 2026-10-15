@@ -1,0 +1,18 @@
+---
+import { getLandingLocale } from '../config/locales';
+import { routes } from '../lib/routes';
+const destination = routes.home(getLandingLocale());
+// Se sirve en HTML sin depender de JavaScript ni de un idioma sin contenido.
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="refresh" content={`0;url=${destination}`} />
+    <meta name="robots" content="noindex,follow" />
+    <link rel="canonical" href={destination} />
+    <title>PM Amco Editorial · Tutoriales</title>
+  </head>
+  <body><p>Accede a los <a href={destination}>tutoriales de PM Amco Editorial</a>.</p></body>
+</html>

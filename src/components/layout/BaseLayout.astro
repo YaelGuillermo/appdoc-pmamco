@@ -1,0 +1,54 @@
+---
+import '../../styles/global.css';
+import type { Locale } from '../../config/locales';
+import { t } from '../../config/translations';
+import { absoluteUrl } from '../../lib/seo';
+import Header from './Header.astro';
+import Footer from './Footer.astro';
+
+interface Props {
+  locale: Locale;
+  title: string;
+  description: string;
+  path: string;
+  structuredData?: string;
+  noindex?: boolean;
+}
+
+const { locale, title, description, path, structuredData, noindex = false } = Astro.props;
+const dict = t(locale);
+const site = Astro.site ?? new URL('https://amco.me/');
+const canonical = absoluteUrl(path, site);
+const pageTitle = `${title} | PM Amco Editorial`;
+---
+
+<!doctype html>
+<html lang={locale}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="theme-color" content="#172c3f" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+    <meta name="robots" content={noindex ? 'noindex,follow' : 'index,follow'} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="canonical" href={canonical} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="PM Amco Editorial · Guías" />
+    <meta property="og:locale" content={locale === 'es' ? 'es_MX' : 'en_US'} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    {structuredData && <script type="application/ld+json" set:html={structuredData} />}
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">{dict.skipToContent}</a>
+    <Header locale={locale} />
+    <main id="main-content"><slot /></main>
+    <Footer locale={locale} />
+    <script>
+      import '../../scripts/progress';
+    </script>
+  </body>
+</html>

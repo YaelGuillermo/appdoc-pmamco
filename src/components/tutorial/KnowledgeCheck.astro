@@ -1,0 +1,88 @@
+---
+import type { Locale } from '../../config/locales';
+import Icon from '../ui/Icon.astro';
+interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+const es = locale === 'es';
+---
+
+<section class="knowledge-check" data-knowledge-check>
+  <div class="knowledge-check__heading">
+    <span class="knowledge-check__badge"><Icon name="sparkles" size={18} /></span><span
+      class="eyebrow eyebrow--ink">{es ? 'COMPRUEBA LO APRENDIDO' : 'CHECK WHAT YOU LEARNED'}</span
+    >
+  </div>
+  <h2>
+    {
+      es
+        ? 'Si pausas el reloj, ¿la tarea queda completada?'
+        : 'Does pausing the clock complete the task?'
+    }
+  </h2>
+  <form data-quiz-form>
+    <fieldset>
+      <legend class="sr-only">{es ? 'Selecciona una respuesta' : 'Choose an answer'}</legend>
+      <label class="quiz-option"
+        ><input type="radio" name="answer" value="yes" required /><span
+          >{
+            es
+              ? 'Sí, porque el intervalo ya tiene hora de fin.'
+              : 'Yes, because the interval has an end time.'
+          }</span
+        ></label
+      >
+      <label class="quiz-option"
+        ><input type="radio" name="answer" value="no" required /><span
+          >{
+            es
+              ? 'No, pausa el intervalo y permite continuar después.'
+              : 'No, it closes this interval and lets me continue later.'
+          }</span
+        ></label
+      >
+      <label class="quiz-option"
+        ><input type="radio" name="answer" value="unknown" required /><span
+          >{
+            es
+              ? 'Sí, pero solo si duró más de una hora.'
+              : 'Yes, but only if it lasted over one hour.'
+          }</span
+        ></label
+      >
+    </fieldset>
+    <button class="button button--dark" type="submit"
+      >{es ? 'Comprobar mi respuesta' : 'Check my answer'}<Icon
+        name="arrow-right"
+        size={17}
+      /></button
+    >
+    <p class="knowledge-check__feedback" data-quiz-result role="status" aria-live="polite" hidden>
+    </p>
+  </form>
+</section>
+<script>
+  const quiz = document.querySelector<HTMLElement>('[data-knowledge-check]');
+  if (quiz) {
+    const form = quiz.querySelector<HTMLFormElement>('[data-quiz-form]');
+    const feedback = quiz.querySelector<HTMLElement>('[data-quiz-result]');
+    const english = document.documentElement.lang === 'en';
+    form?.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const selected = form.querySelector<HTMLInputElement>('input[name="answer"]:checked');
+      if (!selected || !feedback) return;
+      const correct = selected.value === 'no';
+      feedback.hidden = false;
+      feedback.classList.toggle('is-correct', correct);
+      feedback.classList.toggle('is-incorrect', !correct);
+      feedback.textContent = correct
+        ? english
+          ? 'Correct! A pause closes the interval; the task stays pending.'
+          : '¡Correcto! La pausa cierra el intervalo, pero la tarea sigue pendiente.'
+        : english
+          ? 'Not quite. A pause records time; it does not check off the task. Try again.'
+          : 'Casi. Pausar registra tiempo; no marca la tarea como completada. Inténtalo de nuevo.';
+    });
+  }
+</script>

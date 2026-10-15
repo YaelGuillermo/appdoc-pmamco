@@ -1,0 +1,25 @@
+---
+import BaseLayout from '../components/layout/BaseLayout.astro';
+import Icon from '../components/ui/Icon.astro';
+import { getLandingLocale } from '../config/locales';
+import { routes } from '../lib/routes';
+const locale = getLandingLocale();
+---
+
+<BaseLayout
+  locale={locale}
+  title="Página no encontrada"
+  description="Esta página no está disponible en PM Amco Editorial."
+  path="/404/"
+  noindex
+>
+  <section class="not-found container">
+    <span class="eyebrow eyebrow--ink">ERROR 404</span><h1>
+      Esta página aún no forma parte de la guía.
+    </h1><p>
+      Puede que la dirección haya cambiado. Regresa al inicio para encontrar un tutorial.
+    </p><a href={routes.home(locale)} class="button button--dark"
+      >Volver al inicio <Icon name="arrow-right" size={18} /></a
+    >
+  </section>
+</BaseLayout>
