@@ -1,7 +1,7 @@
 ---
 locale: es
-tutorial: time-tracking
-slug: localiza-la-tarea-y-su-reloj
+tutorial: es/registrar-tiempo
+slug: find-the-task-and-clock
 order: 1
 section: discover
 title: Encuentra la tarea y su reloj
@@ -16,6 +16,12 @@ screenshots:
     alt: Ubicación del reloj de una tarea para acceder a sus opciones de tiempo.
     caption: Abre el reloj de la tarea correcta antes de registrar horas.
 note: Una tarea puede tener varios registros de tiempo. Haber trabajado en ella no significa que ya esté completada.
+# amco-clock-assessment-v1
+assessment:
+  type: true_false
+  question: 'Si un reloj tiene horas registradas, la casilla de esa tarea ya queda marcada como completada.'
+  correct: false
+  explanation: 'El reloj registra tiempo y la casilla confirma que el trabajo está completado. Son acciones diferentes.'
 ---
 
 ## 1. Busca una tarea

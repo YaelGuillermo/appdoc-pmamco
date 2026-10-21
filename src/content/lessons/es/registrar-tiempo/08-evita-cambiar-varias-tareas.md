@@ -1,7 +1,7 @@
 ---
 locale: es
-tutorial: time-tracking
-slug: evita-cambiar-varias-tareas
+tutorial: es/registrar-tiempo
+slug: avoid-changing-multiple-tasks
 order: 8
 section: review
 title: Evita cambiar varias tareas sin querer
@@ -20,6 +20,17 @@ screenshots:
 note:
   Antes de pulsar «Iniciar todos los relojes» o «Finalizar todos los relojes», confirma que realmente quieres
   actuar sobre toda la lista.
+# amco-clock-assessment-v1
+assessment:
+  type: single_choice
+  question: 'Si necesitas registrar horas de una sola tarea, ¿cuál es el control correcto?'
+  options:
+    - 'El reloj que se encuentra junto a esa tarea.'
+    - 'El reloj de la lista con la opción «Iniciar todos los relojes».'
+    - 'La opción «Finalizar todos los relojes».'
+    - 'La casilla de completado de la lista.'
+  correctIndex: 0
+  explanation: 'El reloj de una tarea actúa sobre ella; las opciones que dicen «todos» pueden afectar varias tareas.'
 ---
 
 ## 1. Fíjate dónde está el reloj

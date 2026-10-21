@@ -1,0 +1,495 @@
+/* Amco Experience — capa adicional, sin alterar el sistema visual de PM Amco. */
+
+/* El hero global representa un catálogo de plataformas, no un tutorial de reloj. */
+.experience-preview {
+  display: grid;
+  gap: 0;
+  border: 1px solid #e0e6e5;
+  border-radius: 9px;
+  overflow: hidden;
+  background: #fff;
+}
+.experience-preview__item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 15px;
+  border-bottom: 1px solid #e8eceb;
+}
+.experience-preview__item:last-child {
+  border-bottom: 0;
+}
+.experience-preview__item > span:nth-child(2) {
+  display: grid;
+  flex: 1;
+  gap: 4px;
+}
+.experience-preview__item b {
+  color: var(--ink);
+  font-size: 13px;
+  letter-spacing: -0.02em;
+}
+.experience-preview__item small {
+  color: var(--mute);
+  font-size: 11px;
+}
+.experience-preview__item > svg {
+  color: #9aabb1;
+}
+.experience-preview__glyph {
+  display: grid;
+  place-items: center;
+  flex: 0 0 42px;
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+}
+.experience-preview__glyph--sand {
+  background: #efe5d7;
+  color: #745536;
+}
+.experience-preview__glyph--lilac {
+  background: #e8e5f1;
+  color: #66577f;
+}
+.experience-preview__glyph--sage {
+  background: #e1ebe4;
+  color: #466b58;
+}
+
+/* Colecciones/plataformas: tarjetas editoriales, sobrias y con acentos suaves. */
+.platform-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 23px;
+}
+.platform-card {
+  --experience-tint: #eee5d6;
+  --experience-ink: #846342;
+  min-width: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #dae3e2;
+  background: #fff;
+  box-shadow: 0 11px 42px rgba(14, 37, 51, 0.055);
+  transition:
+    transform 0.28s ease,
+    box-shadow 0.28s ease,
+    border-color 0.28s ease;
+}
+.platform-card--lilac {
+  --experience-tint: #e7e3ef;
+  --experience-ink: #665579;
+}
+.platform-card--sage {
+  --experience-tint: #e3ebe4;
+  --experience-ink: #496957;
+}
+.platform-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 22px 64px rgba(14, 37, 51, 0.12);
+  border-color: #c5d1cf;
+}
+.platform-card__surface {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  color: inherit;
+  text-decoration: none;
+}
+.platform-card__surface:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: -3px;
+}
+.platform-card__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 49px;
+  gap: 10px;
+  padding: 14px 22px;
+  border-bottom: 1px solid #e7eceb;
+  color: #667781;
+  background: #fff;
+  font-size: 10px;
+  font-weight: 750;
+  letter-spacing: 0.12em;
+}
+.platform-card__status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  letter-spacing: 0.045em;
+  text-transform: none;
+}
+.platform-card__status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #477969;
+}
+.platform-card__status-dot.is-upcoming {
+  background: #aab7b9;
+}
+.platform-card__art {
+  position: relative;
+  display: grid;
+  place-items: center;
+  height: 192px;
+  isolation: isolate;
+  background: radial-gradient(ellipse at 50% 90%, #fff 0, transparent 67%), var(--experience-tint);
+  overflow: hidden;
+}
+.platform-card__ring {
+  position: absolute;
+  width: 246px;
+  height: 246px;
+  border-radius: 50%;
+  border: 1px solid rgba(47, 68, 78, 0.12);
+}
+.platform-card__ring--a {
+  transform: translate(60px, -40px);
+}
+.platform-card__ring--b {
+  transform: translate(-80px, 55px) scale(0.85);
+}
+.platform-card__monogram {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 116px;
+  height: 116px;
+  border-radius: 28px;
+  transform: rotate(-7deg);
+  background: rgba(255, 255, 255, 0.79);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  color: var(--experience-ink);
+  box-shadow: 0 18px 55px rgba(28, 47, 53, 0.12);
+  font-size: 38px;
+  font-weight: 650;
+  letter-spacing: -0.065em;
+}
+.platform-card__art-mark {
+  display: grid;
+  place-items: center;
+  position: absolute;
+  z-index: 2;
+  left: calc(50% + 45px);
+  top: calc(50% - 61px);
+  width: 36px;
+  height: 36px;
+  color: #fff;
+  background: var(--ink);
+  border: 3px solid var(--experience-tint);
+  border-radius: 50%;
+}
+.platform-card__content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 28px 25px 22px;
+}
+.platform-card__category {
+  color: var(--experience-ink);
+  letter-spacing: 0.15em;
+  font-size: 10px;
+  font-weight: 800;
+}
+.platform-card h3 {
+  margin: 12px 0 10px;
+  color: var(--ink);
+  font-size: clamp(1.4rem, 2vw, 1.8rem);
+  letter-spacing: -0.045em;
+}
+.platform-card__content > p {
+  flex: 1;
+  color: var(--mute);
+  font-size: 14px;
+  line-height: 1.7;
+  margin: 0 0 23px;
+}
+.platform-card__bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 17px;
+  border-top: 1px solid #e4eae9;
+  color: var(--ink-soft);
+  font-size: 12px;
+  font-weight: 700;
+}
+.platform-card__bottom > span:first-child {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.platform-card__arrow {
+  display: grid;
+  place-items: center;
+  width: 37px;
+  height: 37px;
+  border-radius: 50%;
+  background: var(--ink);
+  color: #fff;
+  transition: transform 0.25s ease;
+}
+.platform-card:hover .platform-card__arrow {
+  transform: translateX(3px);
+}
+
+.platform-hero-monogram {
+  --experience-tint: #eee5d6;
+  --experience-ink: #846342;
+  display: grid;
+  place-items: center;
+  flex: 0 0 183px;
+  height: 183px;
+  border-radius: 32px;
+  transform: rotate(-8deg);
+  background: var(--experience-tint);
+  box-shadow: 0 22px 70px rgba(1, 13, 25, 0.22);
+  border: 1px solid rgba(255, 255, 255, 0.48);
+  color: var(--experience-ink);
+  font-size: 57px;
+  font-weight: 650;
+  letter-spacing: -0.06em;
+}
+.platform-hero-monogram--lilac {
+  --experience-tint: #e7e3ef;
+  --experience-ink: #665579;
+}
+.platform-hero-monogram--sage {
+  --experience-tint: #e3ebe4;
+  --experience-ink: #496957;
+}
+.platform-empty {
+  display: flex;
+  align-items: center;
+  gap: 23px;
+  padding: 39px 42px;
+  background: #fff;
+  border: 1px solid #dfe6e5;
+  border-radius: 12px;
+  box-shadow: var(--shadow-soft);
+}
+.platform-empty__icon {
+  display: grid;
+  place-items: center;
+  flex: 0 0 60px;
+  height: 60px;
+  border-radius: 12px;
+  background: #f0ece5;
+  color: var(--accent-ink);
+}
+.platform-empty h3 {
+  margin: 0 0 9px;
+  color: var(--ink);
+  font-size: 24px;
+}
+.platform-empty p {
+  color: var(--mute);
+  line-height: 1.6;
+  margin: 0;
+}
+.platform-empty__back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
+  color: var(--ink);
+  white-space: nowrap;
+  font-size: 12px;
+  font-weight: 760;
+  text-decoration: none;
+}
+.platform-empty__detail {
+  font-size: 12px;
+  margin-top: 9px;
+}
+.platform-empty__detail p {
+  font-size: 12px;
+}
+
+/* Los gráficos de tiempo siguen en las clases originales y solo se montan si visual=clock. */
+.tutorial-artwork {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  isolation: isolate;
+}
+.tutorial-artwork__ring {
+  position: absolute;
+  width: 186px;
+  height: 186px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 0 44px rgba(255, 255, 255, 0.025);
+}
+.tutorial-artwork__tile {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  background: #e7ebe9;
+  color: var(--ink);
+  border: 1px solid #f7f8f5;
+  border-radius: 13px;
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.18);
+}
+.tutorial-artwork__tile--one {
+  width: 96px;
+  height: 96px;
+  transform: rotate(-11deg);
+}
+.tutorial-artwork__tile--two {
+  width: 55px;
+  height: 55px;
+  transform: translate(90px, -60px) rotate(10deg);
+  background: #dfc6a4;
+}
+.tutorial-artwork__tile--three {
+  width: 46px;
+  height: 46px;
+  transform: translate(-90px, 58px) rotate(8deg);
+  background: #d4e3db;
+}
+.guide-steps-art {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 330px;
+  height: 330px;
+  max-width: 100%;
+}
+.guide-steps-art__ring {
+  position: absolute;
+  width: 270px;
+  height: 270px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 0 45px rgba(255, 255, 255, 0.018);
+}
+.guide-steps-art__tile {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  color: var(--ink);
+  background: #f4f4ef;
+  border-radius: 18px;
+  box-shadow: 0 22px 60px rgba(2, 18, 33, 0.23);
+}
+.guide-steps-art__tile--a {
+  width: 134px;
+  height: 134px;
+  transform: rotate(-9deg);
+}
+.guide-steps-art__tile--b {
+  width: 83px;
+  height: 83px;
+  transform: translate(107px, -88px) rotate(14deg);
+  background: #ead9c1;
+}
+.guide-steps-art__tile--c {
+  width: 70px;
+  height: 70px;
+  transform: translate(-103px, 83px) rotate(7deg);
+  background: #cfe2da;
+}
+
+@media (max-width: 1000px) {
+  .platform-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .platform-empty {
+    flex-wrap: wrap;
+  }
+  .platform-empty__back {
+    margin-left: 83px;
+  }
+}
+@media (max-width: 650px) {
+  .platform-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
+  }
+  .platform-card__art {
+    height: 180px;
+  }
+  .platform-empty {
+    padding: 26px 23px;
+    gap: 18px;
+    align-items: flex-start;
+  }
+  .platform-empty__back {
+    margin-left: 0;
+  }
+  .platform-hero-monogram {
+    width: 85px;
+    height: 85px;
+    flex-basis: 85px;
+    border-radius: 17px;
+    font-size: 32px;
+  }
+  .guide-steps-art {
+    height: 270px;
+    transform: scale(0.85);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .platform-card,
+  .platform-card__arrow {
+    transition: none;
+  }
+}
+
+/* Inicio único: identidad de la aplicación sobre sus dos tutoriales. */
+.experience-app-heading {
+  display: flex;
+  align-items: center;
+  gap: clamp(16px, 3vw, 28px);
+  padding: 22px 0 30px;
+  margin-bottom: clamp(24px, 4vw, 44px);
+  border-bottom: 1px solid rgba(25, 46, 62, 0.13);
+}
+.experience-app-heading__monogram {
+  display: grid;
+  place-items: center;
+  flex: 0 0 clamp(70px, 9vw, 96px);
+  width: clamp(70px, 9vw, 96px);
+  aspect-ratio: 1;
+  border-radius: 22px;
+  background: #e6e0d4;
+  color: #1b3043;
+  font-size: clamp(24px, 4vw, 34px);
+  font-weight: 800;
+  letter-spacing: -0.05em;
+}
+.experience-app-heading__copy {
+  flex: 1;
+  min-width: 0;
+}
+.experience-app-heading__copy h2 {
+  margin: 7px 0;
+  font-size: clamp(25px, 3vw, 37px);
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+}
+.experience-app-heading__copy p {
+  margin: 0;
+  line-height: 1.6;
+  max-width: 710px;
+}
+@media (max-width: 740px) {
+  .experience-app-heading {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+  .experience-app-heading > .catalog-count {
+    margin-left: 0;
+    width: 100%;
+  }
+}

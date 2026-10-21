@@ -1,0 +1,40 @@
+---
+import LessonView from '../../../../../components/tutorial/LessonView.astro';
+import {
+  listPublishedTutorialContexts,
+  type Platform,
+  type Tutorial,
+  type Lesson,
+} from '../../../../../lib/catalog';
+import type { Locale } from '../../../../../config/locales';
+
+export async function getStaticPaths() {
+  return (await listPublishedTutorialContexts()).flatMap(({ platform, tutorial, lessons }) =>
+    lessons.map((lesson, stepIndex) => ({
+      params: {
+        locale: tutorial.data.locale,
+        solution: platform.data.slug,
+        tutorial: tutorial.data.slug,
+        lesson: lesson.data.slug,
+      },
+      props: { platform, tutorial, lessons, stepIndex },
+    })),
+  );
+}
+interface Props {
+  platform: Platform;
+  tutorial: Tutorial;
+  lessons: readonly Lesson[];
+  stepIndex: number;
+}
+const { platform, tutorial, lessons, stepIndex } = Astro.props;
+const locale = Astro.params.locale as Locale;
+---
+
+<LessonView
+  locale={locale}
+  platform={platform}
+  tutorial={tutorial}
+  lessons={lessons}
+  stepIndex={stepIndex}
+/>

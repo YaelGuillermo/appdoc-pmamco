@@ -1,7 +1,7 @@
 ---
 locale: es
-tutorial: time-tracking
-slug: practica-con-dos-dias
+tutorial: es/registrar-tiempo
+slug: practice-across-two-days
 order: 9
 section: finish
 title: Practica con una tarea de dos días
@@ -13,6 +13,18 @@ interaction: quiz
 note:
   El ejemplo resume el comportamiento presentado en las 14 pantallas de origen. Las horas son ilustrativas,
   no datos de tu proyecto.
+# amco-clock-assessment-v1
+assessment:
+  type: matching
+  question: 'Relaciona los tres momentos del ejemplo de trabajo repartido en dos días.'
+  pairs:
+    - left: 'Día 1: 10:00 a 10:40'
+      right: 'Se guarda un intervalo cerrado y la tarea continúa pendiente.'
+    - left: 'Día 2: 12:00 a 13:00'
+      right: 'Se registra otro intervalo separado del primero.'
+    - left: 'Trabajo terminado'
+      right: 'Se verifica que la casilla de la tarea quede marcada.'
+  explanation: 'Una tarea puede tener varios intervalos en días diferentes; la casilla indica cuándo está completada.'
 ---
 
 ## Día 1: empiezas y haces una pausa

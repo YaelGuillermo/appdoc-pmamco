@@ -1,0 +1,262 @@
+/* Amco Experience | Respuestas personalizadas, sin selects nativos.
+   Se agrega despues de welcome.css y no modifica los estilos del reloj. */
+.experience-assessment--polished {
+  --answer-ink: #172c3f;
+  --answer-muted: #64777d;
+  --answer-accent: #486f62;
+  --answer-accent-soft: #eaf3ed;
+  --answer-stroke: #dce5e2;
+}
+
+.experience-assessment--polished .experience-assessment__body {
+  background: radial-gradient(ellipse at 100% 0, rgba(232, 241, 236, 0.36), transparent 45%), #fff;
+}
+
+.experience-assessment--polished .experience-assessment__options {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.experience-assessment--polished .experience-assessment__options > button,
+.experience-assessment--polished .experience-assessment__match-option {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  width: 100%;
+  min-width: 0;
+  min-height: 68px;
+  border: 1px solid var(--answer-stroke);
+  border-radius: 12px;
+  padding: 15px;
+  background: #fcfdfc;
+  color: var(--answer-ink);
+  font: inherit;
+  font-size: 13px;
+  font-weight: 650;
+  line-height: 1.5;
+  text-align: left;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(17, 39, 49, 0.025);
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.experience-assessment--polished .experience-assessment__options > button:not(:disabled):hover,
+.experience-assessment--polished .experience-assessment__match-option:not(:disabled):hover {
+  border-color: #a4bcb0;
+  background: #f7faf8;
+  transform: translateY(-2px);
+  box-shadow: 0 9px 22px rgba(17, 39, 49, 0.07);
+}
+
+.experience-assessment--polished .experience-assessment__options > button.is-selected,
+.experience-assessment--polished .experience-assessment__match-option.is-selected {
+  border-color: var(--answer-accent);
+  background: var(--answer-accent-soft);
+  box-shadow:
+    inset 0 0 0 1px rgba(72, 111, 98, 0.13),
+    0 9px 21px rgba(42, 85, 69, 0.08);
+}
+
+.experience-assessment--polished .experience-assessment__options > button:focus-visible,
+.experience-assessment--polished .experience-assessment__match-option:focus-visible,
+.experience-assessment--polished .experience-assessment__submit:focus-visible {
+  outline: 3px solid #92baa7;
+  outline-offset: 3px;
+}
+
+.experience-assessment--polished .experience-assessment__options > button:disabled,
+.experience-assessment--polished .experience-assessment__match-option:disabled {
+  opacity: 1;
+  cursor: default;
+  transform: none;
+}
+
+.experience-assessment--polished .experience-assessment__letter,
+.experience-assessment--polished .experience-assessment__match-letter {
+  display: grid;
+  place-items: center;
+  flex: 0 0 34px;
+  width: 34px;
+  height: 34px;
+  border-radius: 9px;
+  background: #eff2f0;
+  color: #59736d;
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.experience-assessment--polished .is-selected .experience-assessment__letter,
+.experience-assessment--polished .is-selected .experience-assessment__match-letter {
+  background: var(--answer-accent);
+  color: #fff;
+}
+
+.experience-assessment--polished .experience-assessment__answer-text {
+  min-width: 0;
+  flex: 1;
+  overflow-wrap: anywhere;
+}
+
+.experience-assessment--polished .experience-assessment__selection-check {
+  display: grid;
+  flex: 0 0 20px;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  margin-left: auto;
+  border-radius: 50%;
+  border: 1px solid #cbd7d1;
+  background: #fff;
+  color: transparent;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.experience-assessment--polished .is-selected .experience-assessment__selection-check {
+  background: var(--answer-accent);
+  border-color: var(--answer-accent);
+  color: #fff;
+}
+
+.experience-assessment--polished .experience-assessment__matching {
+  gap: 15px;
+}
+
+.experience-assessment--polished .experience-assessment__matching-hint {
+  margin: 0 0 2px;
+  color: var(--answer-muted);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.experience-assessment--polished .experience-assessment__pair {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  align-items: stretch;
+  gap: 15px;
+  border: 1px solid #e0e8e4;
+  border-radius: 13px;
+  background: #f9fbfa;
+  padding: clamp(14px, 2.4vw, 21px);
+}
+
+.experience-assessment--polished .experience-assessment__pair-heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  color: var(--answer-ink);
+}
+
+.experience-assessment--polished .experience-assessment__pair-number {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  flex: 0 0 32px;
+  border-radius: 9px;
+  background: #e9efec;
+  color: #516e63;
+  font-size: 11px;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+}
+
+.experience-assessment--polished .experience-assessment__pair-heading strong {
+  overflow-wrap: anywhere;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.experience-assessment--polished .experience-assessment__match-options {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 9px;
+}
+
+.experience-assessment--polished .experience-assessment__match-option {
+  min-height: 62px;
+  padding: 12px;
+  font-size: 12px;
+  background: #fff;
+}
+
+.experience-assessment--polished .experience-assessment__match-letter {
+  width: 28px;
+  height: 28px;
+  flex-basis: 28px;
+  border-radius: 7px;
+  font-size: 10px;
+}
+
+.experience-assessment--polished .experience-assessment__footer {
+  padding-top: 5px;
+}
+
+.experience-assessment--polished .experience-assessment__submit {
+  gap: 14px;
+  min-height: 48px;
+  padding: 13px 20px;
+  border-radius: 9px;
+  transition:
+    background-color 0.18s ease,
+    transform 0.18s ease;
+}
+
+.experience-assessment--polished .experience-assessment__submit:not(:disabled):hover {
+  background: #29465a;
+  transform: translateY(-1px);
+}
+
+.experience-assessment--polished .experience-assessment__feedback:not(:empty) {
+  margin-top: 20px;
+  padding: 13px 16px;
+  border-radius: 9px;
+  border: 1px solid #e3e9e6;
+  background: #f8faf9;
+}
+
+.experience-assessment--polished .experience-assessment__feedback.is-success {
+  border-color: #c8decf;
+  background: #edf5ef;
+  color: #365d4a;
+}
+
+.experience-assessment--polished .experience-assessment__feedback.is-error {
+  border-color: #eadbce;
+  background: #f9f4ef;
+  color: #80573b;
+}
+
+@media (max-width: 700px) {
+  .experience-assessment--polished .experience-assessment__options,
+  .experience-assessment--polished .experience-assessment__match-options {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .experience-assessment--polished .experience-assessment__options > button,
+  .experience-assessment--polished .experience-assessment__match-option {
+    min-height: 58px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .experience-assessment--polished .experience-assessment__options > button,
+  .experience-assessment--polished .experience-assessment__match-option,
+  .experience-assessment--polished .experience-assessment__submit {
+    transition: none;
+    transform: none !important;
+  }
+}

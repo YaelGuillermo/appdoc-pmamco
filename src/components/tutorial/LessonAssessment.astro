@@ -1,0 +1,173 @@
+---
+import '../../styles/welcome.css';
+import '../../styles/assessment-choices.css';
+import Icon from '../ui/Icon.astro';
+import type { Locale } from '../../config/locales';
+import type { Lesson, Tutorial } from '../../lib/catalog';
+import { tutorialProgressKey } from '../../lib/catalog';
+
+interface Props {
+  locale: Locale;
+  tutorial: Tutorial;
+  lesson: Lesson;
+}
+
+const { locale, tutorial, lesson } = Astro.props;
+const assessment = lesson.data.assessment;
+if (!assessment) throw new Error(`Paso sin evaluación: ${lesson.id}`);
+const es = locale === 'es';
+const copy = es
+  ? {
+      landmark: 'Comprueba lo aprendido',
+      eyebrow: 'PONTE A PRUEBA',
+      title: '¿Qué aprendiste?',
+      true: 'Verdadero',
+      false: 'Falso',
+      choice: 'Selecciona una respuesta',
+      matching: 'Elige la relación correcta para cada concepto',
+      relation: 'Relaciona con',
+      hint: 'Cada respuesta corresponde a un solo concepto.',
+      submit: 'Comprobar respuesta',
+      helper: 'Tu avance se guarda en este navegador.',
+    }
+  : {
+      landmark: 'Check your learning',
+      eyebrow: 'TEST YOUR KNOWLEDGE',
+      title: 'What did you learn?',
+      true: 'True',
+      false: 'False',
+      choice: 'Choose an answer',
+      matching: 'Match each concept with the correct explanation',
+      relation: 'Match with',
+      hint: 'Each answer belongs to one concept only.',
+      submit: 'Check answer',
+      helper: 'Your progress is saved in this browser.',
+    };
+---
+
+<section
+  class="experience-assessment experience-assessment--polished"
+  data-experience-assessment
+  data-locale={locale}
+  data-tutorial-key={tutorialProgressKey(tutorial)}
+  data-step-slug={lesson.data.slug}
+  data-question={JSON.stringify(assessment)}
+  aria-label={copy.landmark}
+>
+  <header class="experience-assessment__header">
+    <span class="experience-assessment__eyebrow">
+      <Icon name="sparkles" size={17} />
+      {copy.eyebrow}
+    </span>
+    <span class="experience-assessment__count">01 / 01</span>
+  </header>
+  <div class="experience-assessment__body">
+    <h2>{copy.title}</h2>
+    <p class="experience-assessment__question">{assessment.question}</p>
+
+    {
+      assessment.type === 'true_false' && (
+        <div class="experience-assessment__options" role="group" aria-label={copy.choice}>
+          <button type="button" data-assessment-choice="1" aria-pressed="false">
+            <span class="experience-assessment__letter">
+              <Icon name="check" size={16} />
+            </span>
+            <span class="experience-assessment__answer-text">{copy.true}</span>
+            <span class="experience-assessment__selection-check" aria-hidden="true">
+              <Icon name="check" size={15} />
+            </span>
+          </button>
+          <button type="button" data-assessment-choice="0" aria-pressed="false">
+            <span class="experience-assessment__letter">
+              <Icon name="corner" size={16} />
+            </span>
+            <span class="experience-assessment__answer-text">{copy.false}</span>
+            <span class="experience-assessment__selection-check" aria-hidden="true">
+              <Icon name="check" size={15} />
+            </span>
+          </button>
+        </div>
+      )
+    }
+
+    {
+      assessment.type === 'single_choice' && (
+        <div class="experience-assessment__options" role="group" aria-label={copy.choice}>
+          {assessment.options.map((option, index) => (
+            <button type="button" data-assessment-choice={String(index)} aria-pressed="false">
+              <span class="experience-assessment__letter">{String.fromCharCode(65 + index)}</span>
+              <span class="experience-assessment__answer-text">{option}</span>
+              <span class="experience-assessment__selection-check" aria-hidden="true">
+                <Icon name="check" size={15} />
+              </span>
+            </button>
+          ))}
+        </div>
+      )
+    }
+
+    {
+      assessment.type === 'matching' && (
+        <div class="experience-assessment__matching" aria-label={copy.matching}>
+          <p class="experience-assessment__matching-hint">{copy.hint}</p>
+          {assessment.pairs.map((pair, index) => (
+            <div class="experience-assessment__pair" data-assessment-pair={String(index)}>
+              <div class="experience-assessment__pair-heading">
+                <span class="experience-assessment__pair-number">
+                  {String(index + 1).padStart(2, '0')}
+                </span>
+                <strong>{pair.left}</strong>
+              </div>
+              <div
+                class="experience-assessment__match-options"
+                role="group"
+                aria-label={`${copy.relation}: ${pair.left}`}
+              >
+                {assessment.pairs.map((_, position) => {
+                  const answerIndex = assessment.pairs.length - position - 1;
+                  const answer = assessment.pairs[answerIndex];
+                  return (
+                    <button
+                      type="button"
+                      class="experience-assessment__match-option"
+                      data-assessment-match-pair={String(index)}
+                      data-assessment-match-option={String(answerIndex)}
+                      aria-pressed="false"
+                    >
+                      <span class="experience-assessment__match-letter">
+                        {String.fromCharCode(65 + position)}
+                      </span>
+                      <span class="experience-assessment__answer-text">{answer?.right}</span>
+                      <span class="experience-assessment__selection-check" aria-hidden="true">
+                        <Icon name="check" size={15} />
+                      </span>
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+          ))}
+        </div>
+      )
+    }
+
+    <div class="experience-assessment__footer">
+      <button type="button" class="experience-assessment__submit" data-assessment-submit>
+        <span data-assessment-submit-label>{copy.submit}</span>
+        <Icon name="arrow-right" size={17} />
+      </button>
+      <span class="experience-assessment__helper">{copy.helper}</span>
+    </div>
+    <p
+      class="experience-assessment__feedback"
+      data-assessment-feedback
+      role="status"
+      aria-live="polite"
+    >
+    </p>
+  </div>
+</section>
+
+<script>
+  import '../../scripts/assessment';
+</script>

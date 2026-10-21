@@ -1,7 +1,7 @@
 ---
 locale: es
-tutorial: time-tracking
-slug: comienza-a-registrar-tiempo
+tutorial: es/registrar-tiempo
+slug: start-tracking-time
 order: 2
 section: practice
 title: Comienza a registrar tiempo
@@ -13,6 +13,17 @@ screenshots:
     alt: Menú Nuevo intervalo con la opción Comenzar ahora.
     caption: Usa «Nuevo intervalo» cuando necesites registrar otro periodo de trabajo.
 note: Las opciones visibles pueden variar según las horas que ya tenga guardadas la tarea.
+# amco-clock-assessment-v1
+assessment:
+  type: single_choice
+  question: '¿Qué sucede al seleccionar «Comenzar ahora» en «Nuevo intervalo»?'
+  options:
+    - 'Guarda una hora de inicio, aunque todavía no exista una hora de fin.'
+    - 'Da la tarea por terminada inmediatamente.'
+    - 'Elimina los periodos que ya estaban registrados.'
+    - 'Inicia automáticamente todos los relojes de la lista.'
+  correctIndex: 0
+  explanation: 'Comenzar ahora registra el inicio de un nuevo intervalo; por sí solo no completa la tarea.'
 ---
 
 ## 1. Abre el menú del reloj

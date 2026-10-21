@@ -1,43 +1,48 @@
 ---
 import type { Locale } from '../../config/locales';
-import type { Lesson, Tutorial } from '../../lib/tutorials';
+import type { Platform, Tutorial, Lesson } from '../../lib/catalog';
+import { tutorialProgressKey } from '../../lib/catalog';
 import { groupChapters } from '../../lib/tutorials';
 import { routes } from '../../lib/routes';
 import Icon from '../ui/Icon.astro';
+
 interface Props {
   locale: Locale;
+  platform: Platform;
   tutorial: Tutorial;
-  lessons: Lesson[];
+  lessons: readonly Lesson[];
 }
-const { locale, tutorial, lessons } = Astro.props;
+const { locale, platform, tutorial, lessons } = Astro.props;
 const groups = groupChapters(lessons, locale);
-const path = routes.tutorial(locale, tutorial.data.slug);
+const path = routes.tutorial(locale, platform.data.slug, tutorial.data.slug);
 const steps = JSON.stringify(lessons.map((lesson) => lesson.data.slug));
 ---
 
 <section
   class="learning-index"
   data-progress-root
-  data-tutorial-key={tutorial.data.key}
+  data-tutorial-key={tutorialProgressKey(tutorial)}
+  data-legacy-progress-key={tutorial.data.key}
   data-locale={locale}
   data-step-list={steps}
   data-step-url-base={path}
 >
   <div class="learning-index__heading">
     <div>
-      <span class="eyebrow eyebrow--ink"
-        >{locale === 'es' ? 'TU RUTA DE APRENDIZAJE' : 'YOUR LEARNING ROADMAP'}</span
-      ><h2>
+      <span class="eyebrow eyebrow--ink">
+        {locale === 'es' ? 'TU RUTA DE APRENDIZAJE' : 'YOUR LEARNING ROADMAP'}
+      </span>
+      <h2>
         {
           locale === 'es'
             ? 'De la primera acción al último detalle.'
             : 'From the first click to the final detail.'
         }
       </h2>
-    </div><div class="learning-index__counter">
-      <strong data-progress-count>0 / {lessons.length}</strong><span
-        >{locale === 'es' ? 'pasos aprendidos' : 'steps learned'}</span
-      >
+    </div>
+    <div class="learning-index__counter">
+      <strong data-progress-count>0 / {lessons.length}</strong>
+      <span>{locale === 'es' ? 'pasos aprendidos' : 'steps learned'}</span>
     </div>
   </div>
   <div class="learning-index__groups">
@@ -45,16 +50,19 @@ const steps = JSON.stringify(lessons.map((lesson) => lesson.data.slug));
       groups.map((group, groupIndex) => (
         <div class="learning-index__group">
           <div class="learning-index__group-label">
-            <>
-              <span>{String(groupIndex + 1).padStart(2, '0')}</span>
-              <strong>{group.title}</strong>
-            </>
+            <span>{String(groupIndex + 1).padStart(2, '0')}</span>
+            <strong>{group.title}</strong>
           </div>
           <div class="learning-index__items">
             {group.lessons.map((lesson) => (
               <a
                 class="learning-index__item"
-                href={routes.lesson(locale, tutorial.data.slug, lesson.data.slug)}
+                href={routes.lesson(
+                  locale,
+                  platform.data.slug,
+                  tutorial.data.slug,
+                  lesson.data.slug,
+                )}
                 data-step-marker={lesson.data.slug}
               >
                 <span class="learning-index__number">
