@@ -1,7 +1,7 @@
 ---
 locale: es
-tutorial: time-tracking
-slug: interpreta-los-intervalos
+tutorial: es/registrar-tiempo
+slug: understand-time-intervals
 order: 5
 section: practice
 title: Entiende qué muestran tus intervalos
@@ -12,6 +12,18 @@ screenshots: []
 note:
   «Abierto» describe un registro incompleto, no necesariamente un reloj activo. También puede faltar la
   hora de inicio en lugar de la de fin.
+# amco-clock-assessment-v1
+assessment:
+  type: matching
+  question: 'Relaciona los conceptos que te ayudan a interpretar un intervalo.'
+  pairs:
+    - left: 'Intervalo cerrado'
+      right: 'Tiene registradas tanto la hora de inicio como la de fin.'
+    - left: 'Intervalo abierto'
+      right: 'Le falta la hora de inicio, la de fin o ambas.'
+    - left: 'Tipo de intervalo'
+      right: 'Indica si fue trabajo, comida, descanso u otra actividad.'
+  explanation: 'El estado depende de las horas; el tipo describe la actividad. Abierto no siempre significa activo.'
 ---
 
 ## 1. Observa las horas guardadas

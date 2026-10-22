@@ -1,0 +1,145 @@
+---
+import '../../styles/welcome.css';
+import Icon from '../ui/Icon.astro';
+import type { Locale } from '../../config/locales';
+import type { Lesson, Tutorial } from '../../lib/catalog';
+import { tutorialProgressKey } from '../../lib/catalog';
+
+interface Props {
+  locale: Locale;
+  tutorial: Tutorial;
+  lessons: readonly Lesson[];
+}
+const { locale, tutorial, lessons } = Astro.props;
+const progressKey = tutorialProgressKey(tutorial);
+---
+
+<section
+  class="welcome-workspace section-pad"
+  data-welcome-workspace
+  aria-label="Explora el gestor de tareas"
+>
+  <div class="welcome-workspace__top">
+    <div>
+      <span class="eyebrow eyebrow--ink">SIMULACIÓN · TU PRIMER RECORRIDO</span>
+      <h2>Ahora sabes dónde empezar.</h2>
+      <p>
+        Explora las cuatro zonas principales con una demostración visual. No modifica ningún
+        proyecto.
+      </p>
+    </div>
+    <span class="welcome-workspace__flag"><Icon name="sparkles" size={17} /> PRÁCTICA VISUAL</span>
+  </div>
+  <div class="welcome-workspace__window">
+    <aside class="welcome-workspace__sidebar" aria-label="Áreas del gestor">
+      <span class="welcome-workspace__logo"><span>AMCO</span><small>Gestor</small></span>
+      <div class="welcome-workspace__sidebar-label">EXPLORA</div>
+      <button type="button" data-workspace-tab="programas" aria-pressed="true"
+        ><span>01</span> Programas</button
+      >
+      <button type="button" data-workspace-tab="columnas" aria-pressed="false"
+        ><span>02</span> Columnas</button
+      >
+      <button type="button" data-workspace-tab="tarjetas" aria-pressed="false"
+        ><span>03</span> Tarjetas</button
+      >
+      <button type="button" data-workspace-tab="comentarios" aria-pressed="false"
+        ><span>04</span> Comentarios</button
+      >
+    </aside>
+    <div class="welcome-workspace__main">
+      <header class="welcome-workspace__bar">
+        <span><span class="welcome-workspace__online"></span> PM Amco Editorial</span>
+        <span class="welcome-workspace__bar-tag">VISTA ILUSTRATIVA</span>
+      </header>
+      <div class="welcome-workspace__stage">
+        <div data-workspace-panel="programas">
+          <div class="welcome-workspace__stage-heading">
+            <span>01 / 04</span><h3>Tus programas</h3><p>
+              Empieza por el programa en el que vas a trabajar.
+            </p>
+          </div>
+          <div class="welcome-workspace__sample-card">
+            <span class="welcome-workspace__sample-icon">P</span><div>
+              <strong>Programa editorial</strong><small
+                >Ciclo de trabajo · Biblioteca · Libros</small
+              >
+            </div><Icon name="arrow-right" size={18} />
+          </div>
+          <div class="welcome-workspace__sample-steps">
+            <span>Libros</span><span>Biblioteca</span><span>Columnas</span>
+          </div>
+        </div>
+        <div data-workspace-panel="columnas" hidden>
+          <div class="welcome-workspace__stage-heading">
+            <span>02 / 04</span><h3>Organiza con columnas</h3><p>
+              Crea o consulta una columna para organizar tus tarjetas.
+            </p>
+          </div>
+          <div class="welcome-workspace__sample-columns">
+            <div>
+              <span>POR HACER</span><strong>Revisar contenido</strong><small>Tarjeta asignada</small
+              >
+            </div><div>
+              <span>EN PROCESO</span><strong>Diseño editorial</strong><small>Trabajo en curso</small
+              >
+            </div>
+          </div>
+        </div>
+        <div data-workspace-panel="tarjetas" hidden>
+          <div class="welcome-workspace__stage-heading">
+            <span>03 / 04</span><h3>Dentro de una tarjeta</h3><p>
+              Consulta responsable, tareas, fechas y progreso.
+            </p>
+          </div>
+          <div class="welcome-workspace__sample-card welcome-workspace__sample-card--task">
+            <span class="welcome-workspace__sample-icon">T</span><div>
+              <strong>Preparar material</strong><small>Miembro · Auxiliar · Fecha de entrega</small
+              ><div class="welcome-workspace__meter"><span></span></div>
+            </div><Icon name="layers" size={19} />
+          </div>
+        </div>
+        <div data-workspace-panel="comentarios" hidden>
+          <div class="welcome-workspace__stage-heading">
+            <span>04 / 04</span><h3>Comparte observaciones</h3><p>
+              Los comentarios permiten etiquetar compañeros y adjuntar archivos.
+            </p>
+          </div>
+          <div class="welcome-workspace__sample-comment">
+            <span class="welcome-workspace__sample-avatar">A</span><div>
+              <strong>Tu comentario</strong><p>Deja aquí una observación para el equipo.</p><small
+                >Etiquetas · Adjuntos · Publicar</small
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="welcome-workspace__window-footer">
+        <span>Práctica interactiva</span><span>No guarda cambios en PM Amco Editorial</span>
+      </footer>
+    </div>
+  </div>
+  <div
+    class="welcome-workspace__summary"
+    data-progress-root
+    data-tutorial-key={progressKey}
+    data-locale={locale}
+    data-step-list={JSON.stringify(lessons.map((lesson) => lesson.data.slug))}
+  >
+    <div>
+      <span class="eyebrow eyebrow--ink">TU AVANCE</span>
+      <strong><span data-progress-count>0 / {lessons.length}</span> lecciones aprendidas</strong>
+      <p>
+        Una respuesta correcta en cada lección marca tu aprendizaje y queda guardada en este
+        navegador.
+      </p>
+    </div>
+    <div class="welcome-workspace__summary-meter">
+      <span data-progress-fill style="width:0%"></span>
+    </div>
+  </div>
+</section>
+
+<script>
+  import '../../scripts/welcome-workspace';
+</script>

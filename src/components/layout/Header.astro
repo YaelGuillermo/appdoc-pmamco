@@ -13,10 +13,12 @@ const dict = t(locale);
 
 <header class="site-header">
   <div class="site-header__inner container">
-    <a class="brand" href={routes.home(locale)} aria-label="PM Amco Editorial — inicio">
+    <a class="brand" href={routes.home(locale)} aria-label="Amco Experience — inicio">
       <span class="brand__glyph" aria-hidden="true"><i></i><i></i><i></i></span>
-      <span class="brand__type"><strong>PM AMCO</strong><small><span></span> EDITORIAL</small></span
-      >
+      <span class="brand__type">
+        <strong>AMCO</strong>
+        <small>EXPERIENCE</small>
+      </span>
     </a>
     <nav class="main-nav" aria-label="Navegación principal">
       <a href={routes.home(locale)}>{dict.navHome}</a>
@@ -27,11 +29,9 @@ const dict = t(locale);
         PUBLISHED_LOCALES.length > 1 && (
           <details class="locale-picker">
             <summary aria-label={dict.language}>
-              <>
-                <Icon name="globe" size={17} />
-                <span>{locale.toUpperCase()}</span>
-                <Icon name="chevron-down" size={14} />
-              </>
+              <Icon name="globe" size={17} />
+              <span>{locale.toUpperCase()}</span>
+              <Icon name="chevron-down" size={14} />
             </summary>
             <div class="locale-picker__menu">
               {LOCALES.map((availableLocale) =>
@@ -54,9 +54,9 @@ const dict = t(locale);
           </details>
         )
       }
-      <a class="header-cta" href={routes.tutorials(locale)}
-        >{dict.navStart}<Icon name="arrow-right" size={16} /></a
-      >
+      <a class="header-cta" href={routes.tutorials(locale)}>
+        {dict.navStart}<Icon name="arrow-right" size={16} />
+      </a>
     </div>
   </div>
 </header>

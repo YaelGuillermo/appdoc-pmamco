@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://amco.me/sitemap.xml
+Sitemap: https://amco-debut.netlify.app/sitemap.xml

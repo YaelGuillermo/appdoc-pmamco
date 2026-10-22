@@ -17,25 +17,24 @@ function collectMarkdown(directory) {
   });
 }
 
-test('glob loaders use the path as the internal ID, not the frontmatter slug', () => {
+test('all three glob loaders use file-scoped IDs, never public slugs', () => {
   const config = readFileSync(join(root, 'src/content.config.ts'), 'utf8');
   assert.match(config, /function entryIdFromPath\(/);
   assert.match(config, /return entry\.replace\(\/\\\.md\$\/i, ''\);/);
-  assert.equal((config.match(/generateId:\s*entryIdFromPath/g) ?? []).length, 2);
+  assert.equal((config.match(/generateId:\s*entryIdFromPath/g) ?? []).length, 3);
 });
 
-test('every published Markdown file has a distinct path-scoped ID', () => {
-  for (const collection of ['lessons', 'tutorials']) {
+test('platforms, tutorials, and steps have distinct path-scoped IDs', () => {
+  for (const collection of ['platforms', 'tutorials', 'lessons']) {
     const base = join(root, 'src/content', collection);
     const paths = collectMarkdown(base);
     const ids = paths.map((file) =>
       relative(base, file).replaceAll('\\', '/').replace(/\.md$/i, ''),
     );
-    assert.equal(new Set(ids).size, ids.length, `IDs duplicados en ${collection}`);
+    assert.equal(new Set(ids).size, ids.length, `Duplicate IDs in ${collection}`);
     assert.ok(
       ids.every((id) => id.startsWith('es/')),
-      `Contenido inesperado en ${collection}`,
+      `Unexpected locale in ${collection}`,
     );
   }
-  assert.notEqual('es/registrar-tiempo', 'en/registrar-tiempo');
 });

@@ -1,7 +1,7 @@
 ---
 locale: es
-tutorial: time-tracking
-slug: finaliza-la-tarea
+tutorial: es/registrar-tiempo
+slug: finish-the-task
 order: 4
 section: practice
 title: Finaliza una tarea correctamente
@@ -12,6 +12,12 @@ screenshots: []
 note:
   Según el flujo mostrado en el material original, «Finalizar ahora» puede cerrar el intervalo y marcar
   la casilla de la tarea. Verifica siempre el resultado en la tarea correspondiente.
+# amco-clock-assessment-v1
+assessment:
+  type: true_false
+  question: 'En el flujo explicado en esta guía, «Finalizar ahora» puede cerrar el intervalo y marcar la casilla de la tarea.'
+  correct: true
+  explanation: 'La guía indica que debes comprobar la casilla después de finalizar; esa es la confirmación visible.'
 ---
 
 ## 1. Comprueba que de verdad terminaste

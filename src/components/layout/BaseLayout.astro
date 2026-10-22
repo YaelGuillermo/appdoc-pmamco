@@ -1,5 +1,7 @@
 ---
 import '../../styles/global.css';
+// El CSS de Amco Experience es una extensión del tema original, no un reemplazo.
+import '../../styles/experience.css';
 import type { Locale } from '../../config/locales';
 import { t } from '../../config/translations';
 import { absoluteUrl } from '../../lib/seo';
@@ -17,9 +19,9 @@ interface Props {
 
 const { locale, title, description, path, structuredData, noindex = false } = Astro.props;
 const dict = t(locale);
-const site = Astro.site ?? new URL('https://amco.me/');
+const site = Astro.site ?? new URL('https://amco-debut.netlify.app/');
 const canonical = absoluteUrl(path, site);
-const pageTitle = `${title} | PM Amco Editorial`;
+const pageTitle = `${title} | Amco Experience`;
 ---
 
 <!doctype html>
@@ -35,7 +37,7 @@ const pageTitle = `${title} | PM Amco Editorial`;
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="canonical" href={canonical} />
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="PM Amco Editorial · Guías" />
+    <meta property="og:site_name" content="Amco Experience" />
     <meta property="og:locale" content={locale === 'es' ? 'es_MX' : 'en_US'} />
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={description} />

@@ -1,5 +1,8 @@
 ---
 key: time-tracking
+platform: es/pm-amco-editorial
+visual: clock
+order: 2
 locale: es
 slug: time-tracking
 title: Aprende a registrar tu tiempo de trabajo

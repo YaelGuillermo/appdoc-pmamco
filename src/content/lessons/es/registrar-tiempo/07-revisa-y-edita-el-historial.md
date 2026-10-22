@@ -1,7 +1,7 @@
 ---
 locale: es
-tutorial: time-tracking
-slug: revisa-y-edita-el-historial
+tutorial: es/registrar-tiempo
+slug: review-and-edit-history
 order: 7
 section: review
 title: Revisa y edita tu historial
@@ -15,6 +15,12 @@ screenshots:
 note:
   Antes de eliminar un intervalo, revisa que sea el registro correcto. La presentación muestra esta opción,
   pero no describe un procedimiento para deshacer borrados.
+# amco-clock-assessment-v1
+assessment:
+  type: true_false
+  question: 'La opción «Gestionar intervalos» solo te permite revisar y modificar el registro más reciente.'
+  correct: false
+  explanation: 'Gestionar intervalos permite consultar el historial de distintos periodos, y añadir, editar o eliminar registros.'
 ---
 
 ## 1. Abre la administración de intervalos

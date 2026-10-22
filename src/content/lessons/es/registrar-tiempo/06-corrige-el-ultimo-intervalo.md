@@ -1,7 +1,7 @@
 ---
 locale: es
-tutorial: time-tracking
-slug: corrige-el-ultimo-intervalo
+tutorial: es/registrar-tiempo
+slug: correct-the-latest-interval
 order: 6
 section: review
 title: Corrige el último intervalo
@@ -18,6 +18,17 @@ screenshots:
 note:
   «Pausar ahora» puede aparecer en más de un grupo. El título del menú indica si estás trabajando con el
   registro reciente o con uno nuevo.
+# amco-clock-assessment-v1
+assessment:
+  type: single_choice
+  question: 'Quieres corregir la hora de tu registro más reciente, sin crear otro periodo. ¿Qué apartado debes abrir?'
+  options:
+    - 'Nuevo intervalo.'
+    - 'Último intervalo.'
+    - 'Iniciar todos los relojes.'
+    - 'La casilla de completado.'
+  correctIndex: 1
+  explanation: 'Último intervalo sirve para corregir el registro reciente. Nuevo intervalo registra otro periodo.'
 ---
 
 ## 1. Abre el reloj de tu tarea

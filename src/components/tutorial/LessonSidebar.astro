@@ -1,19 +1,23 @@
 ---
 import type { Locale } from '../../config/locales';
+import type { Platform, Tutorial, Lesson } from '../../lib/catalog';
+import { tutorialProgressKey } from '../../lib/catalog';
 import { t } from '../../config/translations';
-import { groupChapters, type Lesson, type Tutorial } from '../../lib/tutorials';
+import { groupChapters } from '../../lib/tutorials';
 import { routes } from '../../lib/routes';
 import Icon from '../ui/Icon.astro';
+
 interface Props {
   locale: Locale;
+  platform: Platform;
   tutorial: Tutorial;
-  lessons: Lesson[];
+  lessons: readonly Lesson[];
   currentSlug: string;
 }
-const { locale, tutorial, lessons, currentSlug } = Astro.props;
+const { locale, platform, tutorial, lessons, currentSlug } = Astro.props;
 const dict = t(locale);
 const chapters = groupChapters(lessons, locale);
-const path = routes.tutorial(locale, tutorial.data.slug);
+const path = routes.tutorial(locale, platform.data.slug, tutorial.data.slug);
 const serializedSteps = JSON.stringify(lessons.map((lesson) => lesson.data.slug));
 ---
 
@@ -21,22 +25,26 @@ const serializedSteps = JSON.stringify(lessons.map((lesson) => lesson.data.slug)
   class="lesson-sidebar"
   aria-label={dict.lessonIndex}
   data-progress-root
-  data-tutorial-key={tutorial.data.key}
+  data-tutorial-key={tutorialProgressKey(tutorial)}
+  data-legacy-progress-key={tutorial.data.key}
   data-locale={locale}
   data-step-list={serializedSteps}
   data-step-url-base={path}
 >
   <div class="lesson-sidebar__sticky">
-    <a class="sidebar-return" href={path}><Icon name="arrow-left" size={15} />{dict.backToGuide}</a>
+    <a class="sidebar-return" href={path}>
+      <Icon name="arrow-left" size={15} />{dict.backToGuide}
+    </a>
     <div class="sidebar-course">
-      <div class="sidebar-course__eyebrow">
-        {locale === 'es' ? 'TU TUTORIAL' : 'YOUR TUTORIAL'}
-      </div><strong>{tutorial.data.title}</strong>
+      <div class="sidebar-course__eyebrow">{locale === 'es' ? 'TU TUTORIAL' : 'YOUR TUTORIAL'}</div>
+      <strong>{tutorial.data.title}</strong>
     </div>
     <div class="sidebar-progress">
       <div class="sidebar-progress__header">
-        <span>{dict.courseProgress}</span><span data-progress-count>0 / {lessons.length}</span>
-      </div><div class="sidebar-progress__bar"><span data-progress-fill></span></div>
+        <span>{dict.courseProgress}</span>
+        <span data-progress-count>0 / {lessons.length}</span>
+      </div>
+      <div class="sidebar-progress__bar"><span data-progress-fill></span></div>
     </div>
     <nav aria-label={dict.lessonIndex} class="lesson-nav">
       {
@@ -45,7 +53,12 @@ const serializedSteps = JSON.stringify(lessons.map((lesson) => lesson.data.slug)
             <div class="lesson-nav__heading">{chapter.title}</div>
             {chapter.lessons.map((lesson) => (
               <a
-                href={routes.lesson(locale, tutorial.data.slug, lesson.data.slug)}
+                href={routes.lesson(
+                  locale,
+                  platform.data.slug,
+                  tutorial.data.slug,
+                  lesson.data.slug,
+                )}
                 class:list={[
                   'lesson-nav__item',
                   { 'lesson-nav__item--active': lesson.data.slug === currentSlug },
@@ -65,13 +78,14 @@ const serializedSteps = JSON.stringify(lessons.map((lesson) => lesson.data.slug)
       }
     </nav>
     <div class="sidebar-endnote">
-      <Icon name="shield" size={15} /><span
-        >{
+      <Icon name="shield" size={15} />
+      <span>
+        {
           locale === 'es'
             ? 'Tu avance se guarda solo en este navegador.'
             : 'Progress is saved in this browser only.'
-        }</span
-      >
+        }
+      </span>
     </div>
   </div>
 </aside>

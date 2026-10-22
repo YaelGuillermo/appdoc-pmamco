@@ -1,32 +1,35 @@
-import { getCollection, type CollectionEntry } from 'astro:content';
 import type { Locale } from '../config/locales';
+import { getCatalog, type Lesson, type Platform, type Tutorial } from './catalog';
 
-export type Tutorial = CollectionEntry<'tutorials'>;
-export type Lesson = CollectionEntry<'lessons'>;
+export type { Tutorial, Lesson } from './catalog';
 
-export async function listTutorials(locale: Locale): Promise<Tutorial[]> {
-  const items = await getCollection(
-    'tutorials',
-    (entry) => entry.data.locale === locale && entry.data.published,
-  );
-  return items.sort(
-    (a, b) =>
-      Number(b.data.featured) - Number(a.data.featured) || a.data.title.localeCompare(b.data.title),
+/** Sólo acepta una plataforma real; ya no hay cadenas de key arbitrarias. */
+export async function listTutorials(locale: Locale, platform: Platform): Promise<Tutorial[]> {
+  const groups = await getCatalog(locale);
+  return (
+    groups
+      .find((group) => group.platform.id === platform.id)
+      ?.tutorials.map((group) => group.tutorial) ?? []
   );
 }
 
-export async function listLessons(tutorialKey: string, locale: Locale): Promise<Lesson[]> {
-  const items = await getCollection(
-    'lessons',
-    (entry) =>
-      entry.data.tutorial === tutorialKey && entry.data.locale === locale && entry.data.published,
+/** Sólo acepta un tutorial real; los IDs de las referencias son tipados por Astro. */
+export async function listLessons(tutorial: Tutorial, locale: Locale): Promise<Lesson[]> {
+  const groups = await getCatalog(locale);
+  return (
+    groups
+      .flatMap((platform) => platform.tutorials)
+      .find((group) => group.tutorial.id === tutorial.id)
+      ?.lessons.slice() ?? []
   );
-  return items.sort((a, b) => a.data.order - b.data.order);
 }
 
-export async function findTutorial(locale: Locale, slug: string): Promise<Tutorial | undefined> {
-  const items = await listTutorials(locale);
-  return items.find((tutorial) => tutorial.data.slug === slug);
+export async function findTutorial(
+  locale: Locale,
+  platform: Platform,
+  slug: string,
+): Promise<Tutorial | undefined> {
+  return (await listTutorials(locale, platform)).find((tutorial) => tutorial.data.slug === slug);
 }
 
 export type Chapter = {

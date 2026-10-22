@@ -1,16 +1,18 @@
 ---
 import type { Locale } from '../../config/locales';
+import type { Platform, Tutorial, Lesson } from '../../lib/catalog';
 import { t } from '../../config/translations';
 import { routes } from '../../lib/routes';
-import type { Lesson, Tutorial } from '../../lib/tutorials';
 import Icon from '../ui/Icon.astro';
+
 interface Props {
   locale: Locale;
+  platform: Platform;
   tutorial: Tutorial;
   previous?: Lesson | undefined;
   next?: Lesson | undefined;
 }
-const { locale, tutorial, previous, next } = Astro.props;
+const { locale, platform, tutorial, previous, next } = Astro.props;
 const dict = t(locale);
 ---
 
@@ -19,15 +21,13 @@ const dict = t(locale);
     previous ? (
       <a
         class="step-pager__link"
-        href={routes.lesson(locale, tutorial.data.slug, previous.data.slug)}
+        href={routes.lesson(locale, platform.data.slug, tutorial.data.slug, previous.data.slug)}
       >
-        <>
-          <span>
-            <Icon name="arrow-left" size={16} />
-            {dict.previous}
-          </span>
-          <strong>{previous.data.title}</strong>
-        </>
+        <span>
+          <Icon name="arrow-left" size={16} />
+          {dict.previous}
+        </span>
+        <strong>{previous.data.title}</strong>
       </a>
     ) : (
       <div class="step-pager__empty" />
@@ -37,30 +37,26 @@ const dict = t(locale);
     next ? (
       <a
         class="step-pager__link step-pager__link--next"
-        href={routes.lesson(locale, tutorial.data.slug, next.data.slug)}
+        href={routes.lesson(locale, platform.data.slug, tutorial.data.slug, next.data.slug)}
       >
-        <>
-          <span>
-            {dict.next}
-            <Icon name="arrow-right" size={16} />
-          </span>
-          <strong>{next.data.title}</strong>
-        </>
+        <span>
+          {dict.next}
+          <Icon name="arrow-right" size={16} />
+        </span>
+        <strong>{next.data.title}</strong>
       </a>
     ) : (
       <a
         class="step-pager__link step-pager__link--next"
-        href={routes.tutorial(locale, tutorial.data.slug)}
+        href={routes.tutorial(locale, platform.data.slug, tutorial.data.slug)}
       >
-        <>
-          <span>
-            {dict.backToGuide}
-            <Icon name="arrow-right" size={16} />
-          </span>
-          <strong>
-            {locale === 'es' ? 'Has llegado al final del recorrido' : 'You reached the end'}
-          </strong>
-        </>
+        <span>
+          {dict.backToGuide}
+          <Icon name="arrow-right" size={16} />
+        </span>
+        <strong>
+          {locale === 'es' ? 'Has llegado al final del recorrido' : 'You reached the end'}
+        </strong>
       </a>
     )
   }

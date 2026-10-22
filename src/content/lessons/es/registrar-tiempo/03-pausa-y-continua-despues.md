@@ -1,7 +1,7 @@
 ---
 locale: es
-tutorial: time-tracking
-slug: pausa-y-continua-despues
+tutorial: es/registrar-tiempo
+slug: pause-and-resume-later
 order: 3
 section: practice
 title: Pausa y continúa después
@@ -18,6 +18,18 @@ screenshots:
 note:
   El símbolo de continuidad indica que se espera seguir después. No es una prueba de que alguien siga trabajando
   en ese mismo instante.
+# amco-clock-assessment-v1
+assessment:
+  type: matching
+  question: 'Relaciona cada acción con lo que ocurre cuando haces una pausa y retomas el trabajo.'
+  pairs:
+    - left: 'Pausar ahora'
+      right: 'Guarda la hora de fin del intervalo que estabas registrando.'
+    - left: 'Retomar después'
+      right: 'Permite registrar otro periodo mediante un nuevo intervalo.'
+    - left: 'Casilla de la tarea'
+      right: 'Sigue pendiente mientras el trabajo no esté terminado.'
+  explanation: 'Una pausa cierra un intervalo, pero conserva el trabajo pendiente y permite registrar nuevos periodos.'
 ---
 
 ## 1. Decide cuándo interrumpir el trabajo
