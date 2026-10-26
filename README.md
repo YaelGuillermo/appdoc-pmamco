@@ -1,63 +1,65 @@
 # Amco Experience
 
-Amco Experience es el espacio de aprendizaje para las herramientas y plataformas del universo Amco.
+Amco Experience is the learning hub for the tools and platforms within the Amco ecosystem.
 
-**Jerarquía:** plataforma → tutorial → lección. Cada plataforma tiene su catálogo independiente, pero comparte el sistema visual, la navegación y los componentes de aprendizaje.
+**Hierarchy:** platform → tutorial → lesson. Each platform has its own independent catalog while sharing the same visual system, navigation, and learning components.
 
-Actualmente se publican contenidos en español; la arquitectura conserva soporte para inglés sin mostrar páginas vacías.
+Content is currently published in Spanish. The architecture preserves support for English without displaying empty pages.
 
-## Plataformas
+## Platforms
 
-- **PM Amco Editorial:** contiene el tutorial existente de registro de tiempo (9 lecciones).
-- **Raccord:** colección preparada; tutoriales próximamente.
-- **Genially:** colección preparada; tutoriales próximamente.
+- **PM Amco Editorial:** Contains the existing time registration tutorial (9 lessons).
 
-Ninguna guía se inventa para las colecciones vacías: se muestran como próximas.
+## Development
 
-## Desarrollo
+Requirements: Node.js 22 and pnpm.
 
-Requisitos: Node.js 22 y pnpm.
+sh
 
-```sh
+```
 pnpm install
 pnpm dev
 ```
 
-## Calidad
+## Quality Assurance
 
-```sh
+sh
+
+```
 pnpm check
 ```
 
-Verifica contenido, formato, lint, Astro, pruebas, build y rutas publicadas.
+Verifies content, formatting, linting, Astro, tests, build output, and published routes.
 
-## Organización
+## Project Structure
 
-- `src/content/platforms/es/`: configuración y presentación de plataformas.
-- `src/content/tutorials/es/`: tutoriales con el campo `platform`.
-- `src/content/lessons/es/`: lecciones asociadas a referencias tipadas de `tutorials`.
-- `src/lib/catalog.ts`: árbol tipado plataforma → tutorial → paso, con relaciones verificadas.
-- `src/lib/platforms.ts`: consulta las plataformas publicadas.
-- `src/lib/tutorials.ts`: consulta los tutoriales de una plataforma y sus lecciones.
-- `src/lib/routes.ts`: rutas canónicas y compatibilidad con enlaces anteriores.
-- `src/styles/global.css`: sistema visual original, **intacto**.
-- `src/styles/experience.css`: estilos adicionales para el catálogo de plataformas.
-- `public/assets/`: capturas e imágenes existentes, sin cambios.
-- `envs/`: ejemplos de entornos.
+- `src/content/platforms/es/`: Platform configuration and presentation.
+- `src/content/tutorials/es/`: Tutorials with the `platform` field.
+- `src/content/lessons/es/`: Lessons linked through typed references to `tutorials`.
+- `src/lib/catalog.ts`: Typed platform → tutorial → lesson tree with validated relationships.
+- `src/lib/platforms.ts`: Retrieves published platforms.
+- `src/lib/tutorials.ts`: Retrieves tutorials and their lessons for a given platform.
+- `src/lib/routes.ts`: Canonical routes and backward compatibility with previous links.
+- `src/styles/global.css`: Original visual system, **unchanged**.
+- `src/styles/experience.css`: Additional styles for the platform catalog.
+- `public/assets/`: Existing screenshots and images, unchanged.
+- `envs/`: Environment examples.
 
-Los tutoriales usan `platform: es/id-de-plataforma` y los pasos usan `tutorial: es/id-del-tutorial`, mediante `reference()` de Astro. Las rutas antiguas siguen disponibles como redirecciones HTML hacia `/es/platforms/`. Los cambios de referencias se aplican una vez con `node scripts/migrate-experience-references.mjs`, sin tocar los cuerpos de Markdown.
+Tutorials use `platform: es/platform-id`, and lessons use `tutorial: es/tutorial-id`, through Astro's `reference()` function.
 
-La apariencia extiende el tema original cargando **ambos** CSS (`global.css` y `experience.css`) desde `BaseLayout.astro`.
+Legacy routes remain available as HTML redirects to `/es/platforms/`. Reference updates are applied once using `node scripts/migrate-experience-references.mjs`, without modifying Markdown content.
 
-Para agregar nuevas plataformas o tutoriales, consulta [Arquitectura de Amco Experience](docs/AMCO-EXPERIENCE.md).
+The design extends the original theme by loading **both** CSS files (`global.css` and `experience.css`) from `BaseLayout.astro`.
 
-## Despliegue
+To add new platforms or tutorials, see Amco Experience Architecture.
 
-Netlify publica la rama `main` después de integrar un Pull Request.
+## Deployment
 
-- Sitio: https://amco-debut.netlify.app/
+Netlify deploys the `main` branch after a Pull Request is merged.
+
+- Site: [https://amco-debut.netlify.app/](<https://amco-debut.netlify.app/>)
 - Build command: `pnpm check`
 - Publish directory: `dist`
 - Production branch: `main`
 
-Cuando cambie el dominio, actualiza `PUBLIC_SITE_URL` y `public/robots.txt`.
+When the domain changes, update `PUBLIC_SITE_URL` and `public/robots.txt`.
